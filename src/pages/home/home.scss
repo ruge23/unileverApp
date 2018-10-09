@@ -1,0 +1,13 @@
+page-home {
+    #ionball {
+        //position: absolute;
+        //bottom: 0px;
+        //left: calc(50% - 50px);
+        width: 100%;
+        height: 100%; 
+        background-image: url('../../assets/imgs/bg-filtro.png') !important;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+}
