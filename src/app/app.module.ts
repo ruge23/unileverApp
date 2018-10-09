@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FirstPage } from './../pages/first/first';
+import { SecondPage } from './../pages/second/second';
 
 import { CameraPreview } from '@ionic-native/camera-preview';
 import { Screenshot } from '@ionic-native/screenshot';
@@ -14,15 +15,18 @@ import { ManagedataProvider } from '../providers/managedata/managedata';
 import { Base64 } from '@ionic-native/base64';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 import { IonicStorageModule } from '@ionic/storage';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    FirstPage
+    FirstPage,
+    SecondPage
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
@@ -30,7 +34,8 @@ import { IonicStorageModule } from '@ionic/storage';
   entryComponents: [
     MyApp,
     HomePage,
-    FirstPage
+    FirstPage,
+    SecondPage
   ],
   providers: [
     StatusBar,

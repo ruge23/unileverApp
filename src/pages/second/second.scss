@@ -1,0 +1,31 @@
+page-second {
+    #ionball {
+        //position: absolute;
+        //bottom: 0px;
+        //left: calc(50% - 50px);
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/imgs/bg-filtro.png') !important;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        z-index: 5;
+        position: absolute;
+    top: 0;
+    }
+    #sour{
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        z-index: 2;
+        position: absolute;
+    top: 0;
+    }
+    img{
+        border: 5px solid #365454;
+        width: 80%;
+        margin-top: 2em;
+    }
+ }

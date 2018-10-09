@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Platform } from 'ionic-angular';
+import { SecondPage } from './../second/second';
 
-import { CameraPreview, CameraPreviewOptions } from '@ionic-native/camera-preview';
+import { CameraPreview, CameraPreviewOptions, CameraPreviewPictureOptions } from '@ionic-native/camera-preview';
 import { Screenshot } from '@ionic-native/screenshot';
 import { Base64 } from '@ionic-native/base64';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
@@ -19,6 +20,8 @@ export class HomePage {
   showUI: boolean = true;
   imageText: string;
   idEmpleado: number;
+  userScreenshoot:string;
+  picture:string;
 
   cameraPreviewOpts : CameraPreviewOptions = {
     x: 0,
@@ -32,31 +35,65 @@ export class HomePage {
     alpha: 1
   };
 
-  constructor(public navCtrl: NavController, private cameraPreview: CameraPreview,private screenshot: Screenshot, 
-    private base64: Base64,private base64ToGallery: Base64ToGallery,
-    private mdprovider: ManagedataProvider,private storage: Storage) {
-    this.cameraPreview.startCamera(this.cameraPreviewOpts).then(
-      (res) => {
-        console.log(res)
-      },
-      (err) => {
-        console.log(err)
-      }
-    )
+  // picture options
+  pictureOpts: CameraPreviewPictureOptions = {
+    width: 1280,
+    height: 1280,
+    quality: 85
+  }
+
+  constructor(
+    private platform: Platform,
+    public navCtrl: NavController, 
+    private cameraPreview: CameraPreview,
+    private screenshot: Screenshot, 
+    private base64: Base64,
+    private base64ToGallery: Base64ToGallery,
+    private mdprovider: ManagedataProvider,
+    private storage: Storage) {
+      this.cameraPreview.startCamera(this.cameraPreviewOpts).then(
+        (res) => {
+          console.log(res)
+        },
+        (err) => {
+          console.log(err)
+        }
+      )
+  }
+
+  takePhoto(){
+    this.cameraPreview.takePicture(this.pictureOpts).then((imageData)=>{
+      this.picture = 'data:image/jpeg;base64,' + imageData;
+      this.navCtrl.push(SecondPage, this.picture);
+    }, (err)=>{
+      this.picture = 'assets/img/test.jpg'
+    });
   }
 
   refresh() {
     window['location'].reload();
   }
   
-  takeScreenshot() {
-    this.showUI = false;
-    console.log("take");
-    this.screenshot.save('jpg', 80, 'myscreenshot.jpg').then(res => {
-      this.screen = res.filePath;
-      this.imageText = this.convertToBase64(res.filePath);
-      this.state = true;
-    });
+  async takeScreenshot() {
+    try{
+      await this.platform.ready();
+
+      const res = await this.screenshot.save('jpg', 80, 'tuvieja.jpg');
+      console.log(res);
+    }catch(e){
+      console.error(e)
+    }
+  }
+
+  async takeScreenshotGetUri() {
+    try{
+      await this.platform.ready();
+
+      const res = await this.screenshot.URI(80);
+      this.userScreenshoot = res.URI;
+    }catch(e){
+      console.error(e)
+    }
   }
  
   convertToBase64(imagePath): any {

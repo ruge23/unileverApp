@@ -47,6 +47,22 @@ module.exports = [
     "clobbers": [
       "window.Keyboard"
     ]
+  },
+  {
+    "id": "com.darktalker.cordova.screenshot.screenshot",
+    "file": "plugins/com.darktalker.cordova.screenshot/www/Screenshot.js",
+    "pluginId": "com.darktalker.cordova.screenshot",
+    "merges": [
+      "navigator.screenshot"
+    ]
+  },
+  {
+    "id": "com-badrit-base64.Base64",
+    "file": "plugins/com-badrit-base64/www/Base64.js",
+    "pluginId": "com-badrit-base64",
+    "clobbers": [
+      "navigator.Base64"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -58,7 +74,9 @@ module.exports.metadata =
   "cordova-plugin-device": "2.0.2",
   "cordova-plugin-splashscreen": "5.0.2",
   "cordova-plugin-ionic-webview": "2.2.0",
-  "cordova-plugin-ionic-keyboard": "2.1.3"
+  "cordova-plugin-ionic-keyboard": "2.1.3",
+  "com.darktalker.cordova.screenshot": "0.1.5",
+  "com-badrit-base64": "0.2.0"
 };
 // BOTTOM OF METADATA
 });

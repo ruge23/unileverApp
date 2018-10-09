@@ -1,7 +1,8 @@
 <ion-content>
   <div id="ionball"></div>
+  <img *ngIf="state" [src]="userScreenshoot"/>
 
-  <ion-fab right top samll>
+<!--   <ion-fab right top samll>
     <button ion-fab color="light"><ion-icon name="switch"></ion-icon></button>
   </ion-fab>
 
@@ -11,18 +12,20 @@
 
   <ion-fab right bottom samll>
     <button (click)="refresh()" ion-fab color="light"><ion-icon name="archive"></ion-icon></button>
-  </ion-fab>
+  </ion-fab> -->
   <ion-fab left bottom samll>
-    <button (click)="takeScreenshot()" *ngIf="!state" ion-fab color="light">FOTO</button>
+    <button (click)="takePhoto()" *ngIf="!state" ion-fab color="light">FOTO</button>
   </ion-fab>
-  <ion-fab left bottom samll>
+  <ion-fab left top samll>
+      <button (click)="takeScreenshotGetUri()" *ngIf="!state" ion-fab color="light">URI</button>
+    </ion-fab>
+  <!-- <ion-fab left bottom samll>
     <button (click)="subiryparticipar()" *ngIf="state" ion-fab color="light">SUBIR</button>
-  </ion-fab>
-  <ion-fab left bottom samll>
+  </ion-fab> -->
+  <ion-fab right bottom samll>
     <button (click)="descartar()" *ngIf="state" ion-fab color="light">DESCARTAR</button>
   </ion-fab>
-  <ion-fab left bottom samll>
+  <!-- <ion-fab left bottom samll>
     <button (click)="descargar()" *ngIf="state" ion-fab color="light">BAJAR</button>
-  </ion-fab>
-  <img src="{{screen}}" *ngIf="state" />
+  </ion-fab> -->
 </ion-content>
