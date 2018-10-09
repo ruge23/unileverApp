@@ -6,13 +6,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { FirstPage } from './../pages/first/first';
 
 import { CameraPreview } from '@ionic-native/camera-preview';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    FirstPage
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,8 @@ import { CameraPreview } from '@ionic-native/camera-preview';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    FirstPage
   ],
   providers: [
     StatusBar,
