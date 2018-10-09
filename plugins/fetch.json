@@ -56,5 +56,29 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "com.darktalker.cordova.screenshot": {
+    "source": {
+      "type": "registry",
+      "id": "com.darktalker.cordova.screenshot"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "com-badrit-base64": {
+    "source": {
+      "type": "registry",
+      "id": "com-badrit-base64"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-base64-to-gallery": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-base64-to-gallery"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

@@ -8,6 +8,11 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
 import { CameraPreview } from '@ionic-native/camera-preview';
+import { Screenshot } from '@ionic-native/screenshot';
+import { ManagedataProvider } from '../providers/managedata/managedata';
+import { Base64 } from '@ionic-native/base64';
+import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,8 @@ import { CameraPreview } from '@ionic-native/camera-preview';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -27,7 +33,11 @@ import { CameraPreview } from '@ionic-native/camera-preview';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CameraPreview
+    CameraPreview,
+    Screenshot,
+    Base64,
+    Base64ToGallery,
+    ManagedataProvider
   ]
 })
 export class AppModule {}
