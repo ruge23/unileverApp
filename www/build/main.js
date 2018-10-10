@@ -68,7 +68,7 @@ var FirstPage = /** @class */ (function () {
         var alert = this.alertCtrl.create({
             title: '¿Cómo participar?',
             cssClass: 'custom-alert',
-            message: "\n        <p>Es muy sencillo.</p>\n        <p>Ten\u00E9s que apretar el bot\u00F3n \u201CEmpezar\u201D, tomarte una foto en familia con nuestro filtro \"Bajo el agua\" y \u00A1ya est\u00E1s participando!</p>\n        <p>\u00A1Las fotos m\u00E1s divertidas ganan!</p>\n        <p>Participas por uno de los pases para 4 personas para vivir una noche \u00FAnica en el acuario de Temaiken.</p>\n        <p>\u00BFEst\u00E1s Listo?</p>\n      ",
+            message: "\n        <p>Es muy sencillo:</p>\n        <p>Ten\u00E9s que apretar el bot\u00F3n \u201CEmpezar\u201D, tomarte una foto en familia con nuestro filtro \"Bajo el agua\" y ya est\u00E1s participando por uno de los pases para 4 personas para vivir una noche \u00FAnica en el acuario de Temaiken.</p>\n        <p>\u00A1Las fotos m\u00E1s divertidas ganan! Ten\u00E9s tiempo hasta el 4 de noviembre.</p>\n        <p>\u00BFEst\u00E1s listo?</p>\n      ",
             buttons: [
                 {
                     text: 'OK',
@@ -89,7 +89,7 @@ var FirstPage = /** @class */ (function () {
             var alertEmpezar;
             return __generator(this, function (_a) {
                 alertEmpezar = this.alertCtrl.create({
-                    title: 'Ingresa tus datos para continuar',
+                    title: 'Ingresá tus datos para continuar',
                     cssClass: 'custom-alert-empezar',
                     inputs: [
                         {
@@ -156,7 +156,7 @@ var FirstPage = /** @class */ (function () {
         var alert = this.alertCtrl.create({
             title: '¡Oops...!',
             cssClass: 'custom-alert',
-            message: "\n        <p>Parece que hubo un error</p>\n        <p>Revisa tu conexi\u00F3n a intenet e intentalo nuevamente m\u00E1s tarde.</p>\n        <p>\u00A1Las fotos m\u00E1s divertidas ganan!</p>\n      ",
+            message: "\n        <p>Parece que hubo un error</p>\n        <p>Revis\u00E1 tu conexi\u00F3n a internet e intentalo nuevamente m\u00E1s tarde.</p>\n      ",
             buttons: [
                 {
                     text: 'OK',
@@ -169,7 +169,7 @@ var FirstPage = /** @class */ (function () {
     };
     FirstPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-first',template:/*ion-inline-start:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/first/first.html"*/'<ion-content>\n  <div class="logo">\n    <img src="../../assets/imgs/img/logo-uni-final.png">\n  </div>\n  <div class="botones-index">\n    <a href="#" (click)="showAlert()" class="btn btn-como">¿Como participar?</a>\n    <a href="#" (click)="showAlertEmpezar()" class="btn btn-empezar">¡Empezar!</a>    \n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/first/first.html"*/,
+            selector: 'page-first',template:/*ion-inline-start:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/first/first.html"*/'<ion-content>\n  <div class="logo">\n    <img src="../../assets/imgs/img/logo-uni-final.png">\n  </div>\n  <div class="botones-index">\n    <a href="#" (click)="showAlert()" class="btn btn-como">¿Cómo participar?</a>\n    <a href="#" (click)="showAlertEmpezar()" class="btn btn-empezar">¡Empezar!</a>    \n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/first/first.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavParams */],
@@ -291,9 +291,9 @@ var SecondPage = /** @class */ (function () {
     SecondPage.prototype.showAlertConfirm = function () {
         var _this = this;
         var alert = this.alertCtrl.create({
-            title: '¡Ya estas participando!',
+            title: '¡Ya estás participando!',
             cssClass: 'custom-alert',
-            message: "\n      <p>Muchas gracias por tu buena onda.</p>\n      <p>La selecci\u00F3n de los ganadores se realizar\u00E1 el d\u00EDa XX de noviembre.</p>\n      <p>\u00A1Estate atento!</p>\n    ",
+            message: "\n      <p>Muchas gracias por tu buena onda.</p>\n      <p>\u00A1Estate atento!</p>\n    ",
             buttons: [
                 {
                     text: 'OK',
@@ -310,7 +310,7 @@ var SecondPage = /** @class */ (function () {
         var alert = this.alertCtrl.create({
             title: '¡Oops...!',
             cssClass: 'custom-alert',
-            message: "\n      <p>Parece que hubo un error</p>\n      <p>Revisa tu conexi\u00F3n a intenet e intentalo nuevamente m\u00E1s tarde.</p>\n      <p>\u00A1Las fotos m\u00E1s divertidas ganan!</p>\n    ",
+            message: "\n      <p>Parece que hubo un error</p>\n      <p>Revis\u00E1 tu conexi\u00F3n a internet e intentalo nuevamente m\u00E1s tarde.</p>\n    ",
             buttons: [
                 {
                     text: 'OK',

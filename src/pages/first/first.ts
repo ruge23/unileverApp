@@ -27,11 +27,10 @@ export class FirstPage {
       cssClass: 'custom-alert',
       message: 
       `
-        <p>Es muy sencillo.</p>
-        <p>Tenés que apretar el botón “Empezar”, tomarte una foto en familia con nuestro filtro "Bajo el agua" y ¡ya estás participando!</p>
-        <p>¡Las fotos más divertidas ganan!</p>
-        <p>Participas por uno de los pases para 4 personas para vivir una noche única en el acuario de Temaiken.</p>
-        <p>¿Estás Listo?</p>
+        <p>Es muy sencillo:</p>
+        <p>Tenés que apretar el botón “Empezar”, tomarte una foto en familia con nuestro filtro "Bajo el agua" y ya estás participando por uno de los pases para 4 personas para vivir una noche única en el acuario de Temaiken.</p>
+        <p>¡Las fotos más divertidas ganan! Tenés tiempo hasta el 4 de noviembre.</p>
+        <p>¿Estás listo?</p>
       `,
       buttons:[
         {
@@ -52,7 +51,7 @@ export class FirstPage {
 
   async showAlertEmpezar(){
     const alertEmpezar = this.alertCtrl.create({
-      title: 'Ingresa tus datos para continuar',
+      title: 'Ingresá tus datos para continuar',
       cssClass: 'custom-alert-empezar',
       inputs: [
         {
@@ -124,8 +123,7 @@ export class FirstPage {
       message: 
       `
         <p>Parece que hubo un error</p>
-        <p>Revisa tu conexión a intenet e intentalo nuevamente más tarde.</p>
-        <p>¡Las fotos más divertidas ganan!</p>
+        <p>Revisá tu conexión a internet e intentalo nuevamente más tarde.</p>
       `,
       buttons:[
         {

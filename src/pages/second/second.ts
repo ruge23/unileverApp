@@ -102,12 +102,11 @@ export class SecondPage {
 
  showAlertConfirm(){
   const alert = this.alertCtrl.create({
-    title: '¡Ya estas participando!',
+    title: '¡Ya estás participando!',
     cssClass: 'custom-alert',
     message: 
     `
       <p>Muchas gracias por tu buena onda.</p>
-      <p>La selección de los ganadores se realizará el día XX de noviembre.</p>
       <p>¡Estate atento!</p>
     `,
     buttons:[
@@ -131,8 +130,7 @@ showAlertError(){
     message: 
     `
       <p>Parece que hubo un error</p>
-      <p>Revisa tu conexión a intenet e intentalo nuevamente más tarde.</p>
-      <p>¡Las fotos más divertidas ganan!</p>
+      <p>Revisá tu conexión a internet e intentalo nuevamente más tarde.</p>
     `,
     buttons:[
       {
