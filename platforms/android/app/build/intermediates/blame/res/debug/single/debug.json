@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/rodrigo/tutorialIonic/prueba/unilever/platforms/android/app/build/intermediates/res/merged/debug/mipmap-ldpi_icon.png.flat",
-        "source": "/home/rodrigo/tutorialIonic/prueba/unilever/platforms/android/app/src/main/res/mipmap-ldpi/icon.png"
-    },
-    {
         "merged": "/home/rodrigo/tutorialIonic/prueba/unilever/platforms/android/app/build/intermediates/res/merged/debug/drawable-port-xxxhdpi_screen.png.flat",
         "source": "/home/rodrigo/tutorialIonic/prueba/unilever/platforms/android/app/src/main/res/drawable-port-xxxhdpi/screen.png"
+    },
+    {
+        "merged": "/home/rodrigo/tutorialIonic/prueba/unilever/platforms/android/app/build/intermediates/res/merged/debug/mipmap-ldpi_icon.png.flat",
+        "source": "/home/rodrigo/tutorialIonic/prueba/unilever/platforms/android/app/src/main/res/mipmap-ldpi/icon.png"
     },
     {
         "merged": "/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/platforms/android/app/build/intermediates/res/merged/debug/drawable-port-mdpi_screen.png.flat",

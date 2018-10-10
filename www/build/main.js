@@ -1,13 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 105:
+/***/ 130:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FirstPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_home__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_managedata_managedata__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_home__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -17,20 +18,145 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
 
 
 
 var FirstPage = /** @class */ (function () {
-    function FirstPage(navCtrl, navParams, alertCtrl) {
+    function FirstPage(navCtrl, navParams, alertCtrl, manager) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.alertCtrl = alertCtrl;
+        this.manager = manager;
     }
     FirstPage.prototype.showAlert = function () {
         var alert = this.alertCtrl.create({
             title: '¿Cómo participar?',
             cssClass: 'custom-alert',
-            message: "\n        <p>Es muy sensillo.</p>\n        <p>Ten\u00E9s que apretar el bot\u00F3n \u201CEmpezar\u201D, tomarte una foto en familia con nuestro filtro \"Bajo el agua\" y \u00A1ya est\u00E1s participando!</p>\n        <p>\u00A1Las fotos m\u00E1s divertidas ganan!</p>\n        <p>Participas por uno de los pases para 4 personas para vivir una noche \u00FAnica en el acuario de Temaiken.</p>\n        <p>\u00BFEst\u00E1s Listo?</p>\n      ",
+            message: "\n        <p>Es muy sencillo.</p>\n        <p>Ten\u00E9s que apretar el bot\u00F3n \u201CEmpezar\u201D, tomarte una foto en familia con nuestro filtro \"Bajo el agua\" y \u00A1ya est\u00E1s participando!</p>\n        <p>\u00A1Las fotos m\u00E1s divertidas ganan!</p>\n        <p>Participas por uno de los pases para 4 personas para vivir una noche \u00FAnica en el acuario de Temaiken.</p>\n        <p>\u00BFEst\u00E1s Listo?</p>\n      ",
+            buttons: [
+                {
+                    text: 'OK',
+                    role: 'cancel',
+                    handler: function () {
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    FirstPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad FirstPage');
+    };
+    FirstPage.prototype.showAlertEmpezar = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var alertEmpezar;
+            return __generator(this, function (_a) {
+                alertEmpezar = this.alertCtrl.create({
+                    title: 'Ingresa tus datos para continuar',
+                    cssClass: 'custom-alert-empezar',
+                    inputs: [
+                        {
+                            name: 'nombre',
+                            placeholder: 'Nombre',
+                            type: 'text'
+                        },
+                        {
+                            name: 'apellido',
+                            placeholder: 'Apellido',
+                            type: 'text'
+                        },
+                        {
+                            name: 'id',
+                            placeholder: 'ID Empleado',
+                            type: 'number'
+                        }
+                    ],
+                    buttons: [
+                        {
+                            text: 'Continuar',
+                            role: 'cancel',
+                            handler: function (data) {
+                                if (data.nombre != "" || data.apellido != "" || data.id != "") {
+                                    _this.data = _this.manager.crearParticipante(data.nombre, data.apellido, data.id);
+                                    _this.data.subscribe(function (result) {
+                                        console.log('saf', result.json().status);
+                                        var status = result.json().status;
+                                        if (status == 200) {
+                                            _this.manager.setUserId(data.id);
+                                            console.log("go home");
+                                            _this.gotoHome();
+                                        }
+                                        else {
+                                            _this.showAlertError();
+                                        }
+                                    });
+                                }
+                                else {
+                                    _this.showAlertError();
+                                }
+                                /*
+                   */
+                                /* console.log('algoo',req)
+                                    
+                                console.log(data); */
+                            }
+                        }
+                    ]
+                });
+                alertEmpezar.present();
+                return [2 /*return*/];
+            });
+        });
+    };
+    /* getAccess(nombre, apellido, id){
+      this.manager.crearParticipante(nombre, apellido, id)
+        .su
+    } */
+    FirstPage.prototype.gotoHome = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_1__home_home__["a" /* HomePage */]);
+    };
+    FirstPage.prototype.showAlertError = function () {
+        var alert = this.alertCtrl.create({
+            title: '¡Oops...!',
+            cssClass: 'custom-alert',
+            message: "\n        <p>Parece que hubo un error</p>\n        <p>Revisa tu conexi\u00F3n a intenet e intentalo nuevamente m\u00E1s tarde.</p>\n        <p>\u00A1Las fotos m\u00E1s divertidas ganan!</p>\n      ",
             buttons: [
                 {
                     text: 'OK',
@@ -41,50 +167,14 @@ var FirstPage = /** @class */ (function () {
         });
         alert.present();
     };
-    FirstPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad FirstPage');
-    };
-    FirstPage.prototype.showAlertEmpezar = function () {
-        var alertEmpezar = this.alertCtrl.create({
-            title: 'Ingresa tus datos para continuar',
-            cssClass: 'custom-alert-empezar',
-            inputs: [
-                {
-                    name: 'nombre',
-                    placeholder: 'Nombre',
-                    type: 'text'
-                },
-                {
-                    name: 'apellido',
-                    placeholder: 'Apellido',
-                    type: 'text'
-                },
-                {
-                    name: 'id',
-                    placeholder: 'ID Empleado',
-                    type: 'number'
-                }
-            ],
-            buttons: [
-                {
-                    text: 'Continuar',
-                    role: 'cancel',
-                    handler: function (data) {
-                        console.log(data);
-                    }
-                }
-            ]
-        });
-        alertEmpezar.present();
-    };
-    FirstPage.prototype.gotoHome = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__home_home__["a" /* HomePage */]);
-    };
     FirstPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-first',template:/*ion-inline-start:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/first/first.html"*/'<ion-content>\n  <div class="logo">\n    <img src="../../assets/imgs/img/logo-uni-final.png">\n  </div>\n  <div class="botones-index">\n    <a href="#" (click)="showAlert()" class="btn btn-como">¿Como participar?</a>\n    <a href="#" (click)="showAlertEmpezar()" class="btn btn-empezar">¡Empezar!</a>\n    <a href="#" (click)="gotoHome()" class="btn btn-empezar">¡HOME!</a>    \n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/first/first.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
+            selector: 'page-first',template:/*ion-inline-start:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/first/first.html"*/'<ion-content>\n  <div class="logo">\n    <img src="../../assets/imgs/img/logo-uni-final.png">\n  </div>\n  <div class="botones-index">\n    <a href="#" (click)="showAlert()" class="btn btn-como">¿Como participar?</a>\n    <a href="#" (click)="showAlertEmpezar()" class="btn btn-empezar">¡Empezar!</a>    \n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/first/first.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_0__providers_managedata_managedata__["a" /* ManagedataProvider */]])
     ], FirstPage);
     return FirstPage;
 }());
@@ -93,17 +183,17 @@ var FirstPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 106:
+/***/ 131:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SecondPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_base64__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_base64__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_base64_to_gallery__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_managedata_managedata__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_screenshot__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_base64_to_gallery__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_managedata_managedata__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_screenshot__ = __webpack_require__(108);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -126,12 +216,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var SecondPage = /** @class */ (function () {
-    function SecondPage(navCtrl, navParams, screenshot, base64, base64ToGallery, mdprovider) {
+    function SecondPage(navCtrl, navParams, screenshot, base64, base64ToGallery, alertCtrl, mdprovider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.screenshot = screenshot;
         this.base64 = base64;
         this.base64ToGallery = base64ToGallery;
+        this.alertCtrl = alertCtrl;
         this.mdprovider = mdprovider;
         this.state = false;
         this.showUI = true;
@@ -142,7 +233,6 @@ var SecondPage = /** @class */ (function () {
     };
     SecondPage.prototype.takeScreenshot = function () {
         var _this = this;
-        this.showUI = false;
         console.log("take");
         this.screenshot.save('jpg', 80, 'myscreenshot.jpg').then(function (res) {
             _this.screen = res.filePath;
@@ -152,14 +242,23 @@ var SecondPage = /** @class */ (function () {
     };
     SecondPage.prototype.subiryparticipar = function () {
         var _this = this;
+        this.showUI = false;
         this.screenshot.save('jpg', 80, 'myscreenshot.jpg').then(function (res) {
             //this.screen = res.filePath;
             //this.imageText = this.convertToBase64(res.filePath);
             _this.base64.encodeFile(res.filePath).then(function (base64File) {
                 console.log(base64File);
-                _this.mdprovider.saveImage(base64File, 1);
+                _this.mdprovider.subirImagen(base64File, 1).then(function (res) {
+                    if (res['status'] === 200) {
+                        _this.showAlertConfirm();
+                    }
+                    else if (res['status'] === 400) {
+                        _this.showAlertError();
+                    }
+                });
                 _this.state = true;
             }, function (err) {
+                _this.showAlertError();
                 console.log(err);
             });
         });
@@ -177,6 +276,7 @@ var SecondPage = /** @class */ (function () {
         this.takeScreenshot();
     };
     SecondPage.prototype.descartar = function () {
+        this.showUI = true;
         this.navCtrl.pop();
     };
     SecondPage.prototype.convertToBase64 = function (imagePath) {
@@ -188,12 +288,46 @@ var SecondPage = /** @class */ (function () {
             console.log(err);
         });
     };
+    SecondPage.prototype.showAlertConfirm = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: '¡Ya estas participando!',
+            cssClass: 'custom-alert',
+            message: "\n      <p>Muchas gracias por tu buena onda.</p>\n      <p>La selecci\u00F3n de los ganadores se realizar\u00E1 el d\u00EDa XX de noviembre.</p>\n      <p>\u00A1Estate atento!</p>\n    ",
+            buttons: [
+                {
+                    text: 'OK',
+                    role: 'cancel',
+                    handler: function () {
+                        _this.navCtrl.popToRoot();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    SecondPage.prototype.showAlertError = function () {
+        var alert = this.alertCtrl.create({
+            title: '¡Oops...!',
+            cssClass: 'custom-alert',
+            message: "\n      <p>Parece que hubo un error</p>\n      <p>Revisa tu conexi\u00F3n a intenet e intentalo nuevamente m\u00E1s tarde.</p>\n      <p>\u00A1Las fotos m\u00E1s divertidas ganan!</p>\n    ",
+            buttons: [
+                {
+                    text: 'OK',
+                    role: 'cancel',
+                    handler: function () { }
+                }
+            ]
+        });
+        alert.present();
+    };
     SecondPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-second',template:/*ion-inline-start:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/second/second.html"*/'<ion-content>\n  <img id="sour" src="{{fotoroja}}" alt="">\n <div id="ionball"></div>\n <ion-fab right bottom samll>\n   <button (click)="subiryparticipar()" ion-fab color="light">SUBIR</button>\n </ion-fab>\n <ion-fab left top samll>\n   <button (click)="descartar()" ion-fab color="light">POP</button>\n </ion-fab>\n <ion-fab right top samll>\n   <button (click)="descargar()" ion-fab color="light">BAJAR</button>\n </ion-fab>\n</ion-content>\n'/*ion-inline-end:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/second/second.html"*/,
+            selector: 'page-second',template:/*ion-inline-start:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/second/second.html"*/'<ion-content>\n  <img id="sour" src="{{fotoroja}}" alt="">\n <div id="ionball"></div>\n <!-- <ion-fab bottom center>\n   <button (click)="subiryparticipar()" ion-fab color="secondary">Participar con esta foto</button>\n </ion-fab>\n <ion-fab bottom center>\n   <button (click)="descartar()" ion-fab color="primary">Descartar Foto</button>\n </ion-fab>\n <ion-fab bottom center>\n   <button (click)="descargar()" ion-fab color="danger">Guardar Foto</button>\n </ion-fab> -->\n <div class="botones-opcion-foto">\n   <button ion-button color="participar" *ngIf="showUI" (click)="subiryparticipar()">Participar con esta Foto</button>\n   <button ion-button color="guardar" *ngIf="showUI" (click)="takeScreenshot()">Guardar Foto</button>\n   <button ion-button color="descartar" *ngIf="showUI" (click)="descartar()">Descartar Foto</button>  \n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/second/second.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_screenshot__["a" /* Screenshot */],
             __WEBPACK_IMPORTED_MODULE_0__ionic_native_base64__["a" /* Base64 */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_base64_to_gallery__["a" /* Base64ToGallery */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_4__providers_managedata_managedata__["a" /* ManagedataProvider */]])
     ], SecondPage);
     return SecondPage;
@@ -203,7 +337,7 @@ var SecondPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 117:
+/***/ 141:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -216,20 +350,20 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 117;
+webpackEmptyAsyncContext.id = 141;
 
 /***/ }),
 
-/***/ 159:
+/***/ 185:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/first/first.module": [
-		285,
+		407,
 		1
 	],
 	"../pages/second/second.module": [
-		286,
+		408,
 		0
 	]
 };
@@ -244,25 +378,25 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 159;
+webpackAsyncContext.id = 185;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 160:
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__second_second__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera_preview__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_screenshot__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_base64__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_base64_to_gallery__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_managedata_managedata__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__second_second__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera_preview__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_screenshot__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_base64__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_base64_to_gallery__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_managedata_managedata__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(207);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -328,6 +462,7 @@ var HomePage = /** @class */ (function () {
         this.storage = storage;
         this.state = false;
         this.showUI = true;
+        this.buttonvisible = true;
         this.cameraPreviewOpts = {
             x: 0,
             y: 0,
@@ -370,6 +505,7 @@ var HomePage = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 3, , 4]);
+                        this.buttonvisible = false;
                         return [4 /*yield*/, this.platform.ready()];
                     case 1:
                         _a.sent();
@@ -420,24 +556,9 @@ var HomePage = /** @class */ (function () {
             console.log(err);
         });
     };
-    HomePage.prototype.subiryparticipar = function () {
-        var _this = this;
-        //subir
-        this.storage.get('_idempleado_').then(function (val) {
-            _this.mdprovider.saveImage(_this.imageText, val);
-        });
-        //navegar a la siguiente pagina o al popup que te dice que ya estas adentro
-    };
-    HomePage.prototype.descargar = function () {
-        this.base64ToGallery.base64ToGallery(this.imageText).then(function (res) { return console.log('Saved image to gallery ', res); }, function (err) { return console.log('Error saving image to gallery ', err); });
-    };
-    HomePage.prototype.descartar = function () {
-        this.imageText = "";
-        this.state = false;
-    };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/home/home.html"*/'<ion-content>\n  <div id="ionball"></div>\n  <img *ngIf="state" [src]="userScreenshoot"/>\n\n<!--   <ion-fab right top samll>\n    <button ion-fab color="light"><ion-icon name="switch"></ion-icon></button>\n  </ion-fab>\n\n  <ion-fab left top samll>\n    <button ion-fab color="light"><ion-icon name="exit"></ion-icon></button>\n  </ion-fab>\n\n  <ion-fab right bottom samll>\n    <button (click)="refresh()" ion-fab color="light"><ion-icon name="archive"></ion-icon></button>\n  </ion-fab> -->\n  <ion-fab left bottom samll>\n    <button (click)="takePhoto()" *ngIf="!state" ion-fab color="light">FOTO</button>\n  </ion-fab>\n  <ion-fab left top samll>\n      <button (click)="takeScreenshotGetUri()" *ngIf="!state" ion-fab color="light">URI</button>\n    </ion-fab>\n  <!-- <ion-fab left bottom samll>\n    <button (click)="subiryparticipar()" *ngIf="state" ion-fab color="light">SUBIR</button>\n  </ion-fab> -->\n  <ion-fab right bottom samll>\n    <button (click)="descartar()" *ngIf="state" ion-fab color="light">DESCARTAR</button>\n  </ion-fab>\n  <!-- <ion-fab left bottom samll>\n    <button (click)="descargar()" *ngIf="state" ion-fab color="light">BAJAR</button>\n  </ion-fab> -->\n</ion-content>'/*ion-inline-end:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/home/home.html"*/'<ion-content>\n  <div id="ionball"></div>\n  <img *ngIf="state" [src]="userScreenshoot"/>\n\n<!--   <ion-fab right top samll>\n    <button ion-fab color="light"><ion-icon name="switch"></ion-icon></button>\n  </ion-fab>\n\n  <ion-fab left top samll>\n    <button ion-fab color="light"><ion-icon name="exit"></ion-icon></button>\n  </ion-fab>\n\n  <ion-fab right bottom samll>\n    <button (click)="refresh()" ion-fab color="light"><ion-icon name="archive"></ion-icon></button>\n  </ion-fab> -->\n  <ion-fab bottom center samll>\n    <button ion-fab color="danger" *ngIf="buttonvisible" (click)="takePhoto()"></button>\n  </ion-fab>\n<!--   <ion-fab left top samll>\n      <button (click)="takeScreenshotGetUri()" *ngIf="!state" ion-fab color="light">URI</button>\n    </ion-fab> -->\n  <!-- <ion-fab left bottom samll>\n    <button (click)="subiryparticipar()" *ngIf="state" ion-fab color="light">SUBIR</button>\n  </ion-fab> -->\n<!--   <ion-fab right bottom samll>\n    <button (click)="descartar()" *ngIf="state" ion-fab color="light">DESCARTAR</button>\n  </ion-fab> -->\n  <!-- <ion-fab left bottom samll>\n    <button (click)="descargar()" *ngIf="state" ion-fab color="light">BAJAR</button>\n  </ion-fab> -->\n</ion-content>'/*ion-inline-end:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
@@ -455,13 +576,13 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 207:
+/***/ 250:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(258);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -469,33 +590,35 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 228:
+/***/ 258:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(284);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_first_first__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_second_second__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera_preview__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_screenshot__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_managedata_managedata__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_base64__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_base64_to_gallery__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_storage__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_common_http__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(403);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_first_first__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_second_second__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera_preview__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_screenshot__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_managedata_managedata__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_base64__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_base64_to_gallery__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_storage__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_common_http__ = __webpack_require__(404);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_http__ = __webpack_require__(186);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -525,7 +648,8 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_15__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_15__angular_common_http__["a" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_16__angular_http__["c" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/first/first.module#FirstPageModule', name: 'FirstPage', segment: 'first', priority: 'low', defaultHistory: [] },
@@ -560,16 +684,16 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 284:
+/***/ 403:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_first_first__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_first_first__ = __webpack_require__(130);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -607,14 +731,15 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 82:
+/***/ 60:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ManagedataProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operators__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -637,52 +762,53 @@ var ManagedataProvider = /** @class */ (function () {
     function ManagedataProvider(http) {
         this.http = http;
         console.log('Hello ManagedataProvider Provider');
+        this.userId = 0;
     }
-    ManagedataProvider.prototype.saveImage = function (image, idempleado) {
-        /* var url = "http://ctrlztest.com.ar/unilever/api/guardarfoto.php";
-        let postData = new FormData();
-        postData.append('idempleado', idempleado);
-        postData.append('foto', image)
-        this.data = this.http.post(url, postData,{
-          headers: { 'Content-Type': 'multipart/form-data' }
-        });
-        this.data.subscribe(data =>{
-          console.log(data);
-        }) */
-        /* this.http.post('http://ctrlztest.com.ar/unilever/api/guardarfoto.php?foto='+image+'&idempleado=1',{},{headers :{'Content-Type':'multipart/form-data'}})
-          .subscribe(
-              (res)=>{
-                console.log(res);
-            },
-              (err)=>{console.log('Error', err)}
-            ); */
-        var url = "http://ctrlztest.com.ar/unilever/api/guardarfoto.php";
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
-        headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* RequestOptions */]({ headers: headers });
-        var body = "idempleado=" + idempleado + "&foto=" + image;
-        alert(body);
-        var req = this.http.post(url, body, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } });
-        req.subscribe(function (res) {
-            console.log(res);
-        }, function (err) {
-            console.log(err);
-        });
+    ManagedataProvider.prototype.setUserId = function (id) {
+        this.userId = id;
     };
-    ManagedataProvider.prototype.saveUserData = function (nombre, apellido, idempleado) {
-        var url = "http://ctrlztest.com.ar/mascotasya/apirest/user-create-favorite.php";
-        var postData = new FormData();
-        postData.append('idempleado', idempleado);
-        postData.append('nombre', nombre);
-        postData.append('apellido', apellido);
-        this.data = this.http.post(url, postData);
-        this.data.subscribe(function (data) {
-            console.log(data);
+    ManagedataProvider.prototype.crearParticipante = function (nombre, apellido, idempleado) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Access-Control-Allow-Origin', '*');
+        headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+        headers.append('Accept', 'application/json');
+        headers.append('content-type', 'application/json');
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var body = JSON.stringify({ nombre: nombre, apellido: apellido, idempleado: idempleado });
+        return this.http.post("http://ctrlztest.com.ar/unilever/api/crearparticipante.php", body, { headers: headers, withCredentials: true })
+            .pipe(Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_operators__["tap"])(function (data) { return console.log('All: ' + JSON.stringify(data)); }));
+        /* .subscribe(res => {
+          console.log("violvio", res.json().status);
+          return res.json().status;
+        }, (err) => {
+          console.log("chau");
+       
+          return "error";
+        }); */
+    };
+    ManagedataProvider.prototype.subirImagen = function (image, idempleado) {
+        var _this = this;
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Access-Control-Allow-Origin', '*');
+        headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+        headers.append('Accept', 'application/json');
+        headers.append('content-type', 'application/json');
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var body = JSON.stringify({ foto: image, idempleado: this.userId });
+        return new Promise(function (resolve, reject) {
+            _this.http.post("http://ctrlztest.com.ar/unilever/api/guardarfoto.php", body, { headers: headers, withCredentials: true })
+                .subscribe(function (res) {
+                console.log("violvio", res);
+                resolve(res);
+            }, function (err) {
+                console.log("chau");
+                //return "error";
+            });
         });
     };
     ManagedataProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
     ], ManagedataProvider);
     return ManagedataProvider;
 }());
@@ -691,5 +817,5 @@ var ManagedataProvider = /** @class */ (function () {
 
 /***/ })
 
-},[207]);
+},[250]);
 //# sourceMappingURL=main.js.map

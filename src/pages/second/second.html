@@ -1,13 +1,18 @@
 <ion-content>
   <img id="sour" src="{{fotoroja}}" alt="">
  <div id="ionball"></div>
- <ion-fab right bottom samll>
-   <button (click)="subiryparticipar()" ion-fab color="light">SUBIR</button>
+ <!-- <ion-fab bottom center>
+   <button (click)="subiryparticipar()" ion-fab color="secondary">Participar con esta foto</button>
  </ion-fab>
- <ion-fab left top samll>
-   <button (click)="descartar()" ion-fab color="light">POP</button>
+ <ion-fab bottom center>
+   <button (click)="descartar()" ion-fab color="primary">Descartar Foto</button>
  </ion-fab>
- <ion-fab right top samll>
-   <button (click)="descargar()" ion-fab color="light">BAJAR</button>
- </ion-fab>
+ <ion-fab bottom center>
+   <button (click)="descargar()" ion-fab color="danger">Guardar Foto</button>
+ </ion-fab> -->
+ <div class="botones-opcion-foto">
+   <button ion-button color="participar" *ngIf="showUI" (click)="subiryparticipar()">Participar con esta Foto</button>
+   <button ion-button color="guardar" *ngIf="showUI" (click)="takeScreenshot()">Guardar Foto</button>
+   <button ion-button color="descartar" *ngIf="showUI" (click)="descartar()">Descartar Foto</button>  
+  </div>
 </ion-content>

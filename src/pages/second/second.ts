@@ -1,6 +1,6 @@
 import { Base64 } from '@ionic-native/base64';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 import { ManagedataProvider } from '../../providers/managedata/managedata';
 import { Screenshot } from '@ionic-native/screenshot';
@@ -25,8 +25,10 @@ export class SecondPage {
  showUI: boolean = true;
  imageText: string;
  idEmpleado: number;
+
  constructor(public navCtrl: NavController, public navParams: NavParams, private screenshot: Screenshot,
    private base64: Base64,private base64ToGallery: Base64ToGallery,
+   private alertCtrl : AlertController,   
    private mdprovider: ManagedataProvider){//,private storage: Storage) {
    this.fotoroja = navParams.data;
  }
@@ -36,7 +38,6 @@ export class SecondPage {
  }
 
  takeScreenshot() {
-   this.showUI = false;
    console.log("take");
    this.screenshot.save('jpg', 80, 'myscreenshot.jpg').then(res => {
      this.screen = res.filePath;
@@ -46,15 +47,23 @@ export class SecondPage {
  }
 
  subiryparticipar() {
+  this.showUI = false;
   this.screenshot.save('jpg', 80, 'myscreenshot.jpg').then(res => {
     //this.screen = res.filePath;
     //this.imageText = this.convertToBase64(res.filePath);
     
     this.base64.encodeFile(res.filePath).then((base64File: string) => {
       console.log(base64File);
-      this.mdprovider.saveImage(base64File,1);
+      this.mdprovider.subirImagen(base64File,1).then((res)=>{
+        if(res['status']===200){
+          this.showAlertConfirm();
+        }else if(res['status']===400){
+          this.showAlertError();
+        }
+      })
     this.state = true;
     }, (err) => {
+      this.showAlertError();
       console.log(err);
     });
     
@@ -77,6 +86,7 @@ export class SecondPage {
  }
 
  descartar() {
+   this.showUI = true;
    this.navCtrl.pop();
  }
 
@@ -89,4 +99,50 @@ export class SecondPage {
      console.log(err);
    });
  }
+
+ showAlertConfirm(){
+  const alert = this.alertCtrl.create({
+    title: '¡Ya estas participando!',
+    cssClass: 'custom-alert',
+    message: 
+    `
+      <p>Muchas gracias por tu buena onda.</p>
+      <p>La selección de los ganadores se realizará el día XX de noviembre.</p>
+      <p>¡Estate atento!</p>
+    `,
+    buttons:[
+      {
+        text: 'OK',
+        role: 'cancel',
+        handler: ()=>{
+          this.navCtrl.popToRoot();
+        }
+      }
+    ]
+  })
+
+  alert.present();
+}
+
+showAlertError(){
+  const alert = this.alertCtrl.create({
+    title: '¡Oops...!',
+    cssClass: 'custom-alert',
+    message: 
+    `
+      <p>Parece que hubo un error</p>
+      <p>Revisa tu conexión a intenet e intentalo nuevamente más tarde.</p>
+      <p>¡Las fotos más divertidas ganan!</p>
+    `,
+    buttons:[
+      {
+        text: 'OK',
+        role: 'cancel',
+        handler: ()=>{}
+      }
+    ]
+  })
+
+  alert.present();
+}
 }

@@ -13,18 +13,18 @@
   <ion-fab right bottom samll>
     <button (click)="refresh()" ion-fab color="light"><ion-icon name="archive"></ion-icon></button>
   </ion-fab> -->
-  <ion-fab left bottom samll>
-    <button (click)="takePhoto()" *ngIf="!state" ion-fab color="light">FOTO</button>
+  <ion-fab bottom center samll>
+    <button ion-fab color="danger" *ngIf="buttonvisible" (click)="takePhoto()"></button>
   </ion-fab>
-  <ion-fab left top samll>
+<!--   <ion-fab left top samll>
       <button (click)="takeScreenshotGetUri()" *ngIf="!state" ion-fab color="light">URI</button>
-    </ion-fab>
+    </ion-fab> -->
   <!-- <ion-fab left bottom samll>
     <button (click)="subiryparticipar()" *ngIf="state" ion-fab color="light">SUBIR</button>
   </ion-fab> -->
-  <ion-fab right bottom samll>
+<!--   <ion-fab right bottom samll>
     <button (click)="descartar()" *ngIf="state" ion-fab color="light">DESCARTAR</button>
-  </ion-fab>
+  </ion-fab> -->
   <!-- <ion-fab left bottom samll>
     <button (click)="descargar()" *ngIf="state" ion-fab color="light">BAJAR</button>
   </ion-fab> -->

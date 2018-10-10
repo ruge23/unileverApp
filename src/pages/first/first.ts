@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs/Observable';
+import { ManagedataProvider } from './../../providers/managedata/managedata';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
@@ -9,7 +11,14 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 })
 export class FirstPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  data : Observable <any>;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public alertCtrl: AlertController,
+    public manager: ManagedataProvider
+  ) {
   }
 
   showAlert(){
@@ -18,7 +27,7 @@ export class FirstPage {
       cssClass: 'custom-alert',
       message: 
       `
-        <p>Es muy sensillo.</p>
+        <p>Es muy sencillo.</p>
         <p>Tenés que apretar el botón “Empezar”, tomarte una foto en familia con nuestro filtro "Bajo el agua" y ¡ya estás participando!</p>
         <p>¡Las fotos más divertidas ganan!</p>
         <p>Participas por uno de los pases para 4 personas para vivir una noche única en el acuario de Temaiken.</p>
@@ -28,7 +37,8 @@ export class FirstPage {
         {
           text: 'OK',
           role: 'cancel',
-          handler: ()=>{}
+          handler: ()=>{
+          }
         }
       ]
     })
@@ -40,7 +50,7 @@ export class FirstPage {
     console.log('ionViewDidLoad FirstPage');
   }
 
-  showAlertEmpezar(){
+  async showAlertEmpezar(){
     const alertEmpezar = this.alertCtrl.create({
       title: 'Ingresa tus datos para continuar',
       cssClass: 'custom-alert-empezar',
@@ -66,7 +76,31 @@ export class FirstPage {
           text: 'Continuar',
           role: 'cancel',
           handler: data =>{
-            console.log(data);
+            if(data.nombre != "" || data.apellido != "" || data.id != ""){
+              this.data = this.manager.crearParticipante(data.nombre, data.apellido, data.id);
+              this.data.subscribe(result => {
+                console.log('saf',result.json().status);
+                let status = result.json().status;
+              if(status == 200){
+                this.manager.setUserId(data.id);
+                console.log("go home");
+                this.gotoHome();
+                
+              }else{
+                this.showAlertError();
+              }
+            });
+          }else{
+            this.showAlertError();
+          }
+             
+              
+              /*  
+ */
+            
+            /* console.log('algoo',req)
+                
+            console.log(data); */
           }
         }
       ]
@@ -74,8 +108,35 @@ export class FirstPage {
     alertEmpezar.present();
   }
 
+  /* getAccess(nombre, apellido, id){
+    this.manager.crearParticipante(nombre, apellido, id)
+      .su
+  } */
+
   gotoHome(){
     this.navCtrl.push(HomePage);
+  }
+
+  showAlertError(){
+    const alert = this.alertCtrl.create({
+      title: '¡Oops...!',
+      cssClass: 'custom-alert',
+      message: 
+      `
+        <p>Parece que hubo un error</p>
+        <p>Revisa tu conexión a intenet e intentalo nuevamente más tarde.</p>
+        <p>¡Las fotos más divertidas ganan!</p>
+      `,
+      buttons:[
+        {
+          text: 'OK',
+          role: 'cancel',
+          handler: ()=>{}
+        }
+      ]
+    })
+  
+    alert.present();
   }
 
 }

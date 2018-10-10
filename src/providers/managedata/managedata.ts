@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {Http, Headers, RequestOptions} from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs';
+import { catchError, tap, map } from 'rxjs/operators';
 /*
   Generated class for the ManagedataProvider provider.
 
@@ -10,60 +11,67 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 @Injectable()
 export class ManagedataProvider {
 
-  constructor(public http: HttpClient) {
+  data : Observable <any>;
+  userId : number;
+
+  constructor(public http: Http) {
     console.log('Hello ManagedataProvider Provider');
+    this.userId = 0;
   }
 
-  private data: any;
-  saveImage(image, idempleado) {
-    /* var url = "http://ctrlztest.com.ar/unilever/api/guardarfoto.php";
-    let postData = new FormData();
-    postData.append('idempleado', idempleado);
-    postData.append('foto', image)
-    this.data = this.http.post(url, postData,{
-      headers: { 'Content-Type': 'multipart/form-data' }
+  setUserId(id){
+    this.userId = id;
+  }
+
+  crearParticipante(nombre, apellido,idempleado):Observable<any>{
+    var headers = new Headers();
+        headers.append('Access-Control-Allow-Origin' , '*');
+        headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+        headers.append('Accept','application/json');
+        headers.append('content-type','application/json');
+        const requestOptions = new RequestOptions({ headers: headers });
+   
+   
+    var body = JSON.stringify({nombre: nombre, apellido: apellido, idempleado: idempleado});
+   
+    return this.http.post("http://ctrlztest.com.ar/unilever/api/crearparticipante.php", body, { headers: headers, withCredentials: true })
+    .pipe(
+      tap(data => console.log('All: ' + JSON.stringify(data)))
+    );
+    
+
+    /* .subscribe(res => {
+      console.log("violvio", res.json().status);
+      return res.json().status;
+    }, (err) => {
+      console.log("chau");
+   
+      return "error";
+    }); */
+   
+   }
+   
+   subirImagen(image, idempleado):any{
+    var headers = new Headers();
+        headers.append('Access-Control-Allow-Origin' , '*');
+        headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+        headers.append('Accept','application/json');
+        headers.append('content-type','application/json');
+        const requestOptions = new RequestOptions({ headers: headers });
+   
+   
+    var body = JSON.stringify({foto: image, idempleado: this.userId});
+    
+    return new Promise((resolve, reject) => {
+      this.http.post("http://ctrlztest.com.ar/unilever/api/guardarfoto.php", body, { headers: headers, withCredentials: true })
+      .subscribe(res => {
+        console.log("violvio", res);
+        resolve(res);
+      }, (err) => {
+        console.log("chau");
+     
+        //return "error";
+      });
     });
-    this.data.subscribe(data =>{
-      console.log(data);
-    }) */
-    /* this.http.post('http://ctrlztest.com.ar/unilever/api/guardarfoto.php?foto='+image+'&idempleado=1',{},{headers :{'Content-Type':'multipart/form-data'}})
-      .subscribe(
-          (res)=>{
-            console.log(res);
-        },
-          (err)=>{console.log('Error', err)}
-        ); */
-
-        let url = "http://ctrlztest.com.ar/unilever/api/guardarfoto.php";
-
-        var headers = new Headers()
-         headers.append('Content-Type', 'application/x-www-form-urlencoded');
-       
-        let options = new RequestOptions({ headers: headers });
-       
-       
-          let body =  "idempleado=" +idempleado + "&foto=" +image ;
-       
-          alert(body);
-       
-        let req = this.http.post(url, body, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
-        req.subscribe((res)=>{
-          console.log(res)
-        },(err)=>{
-          console.log(err);
-        })  
-      }
-
-  saveUserData(nombre, apellido, idempleado) {
-    var url = "http://ctrlztest.com.ar/mascotasya/apirest/user-create-favorite.php";
-    let postData = new FormData();
-    postData.append('idempleado', idempleado);
-    postData.append('nombre', nombre)
-    postData.append('apellido', apellido)
-    this.data = this.http.post(url, postData);
-    this.data.subscribe(data =>{
-      console.log(data);
-    })
-  }
-
+  } 
 }

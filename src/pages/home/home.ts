@@ -22,6 +22,7 @@ export class HomePage {
   idEmpleado: number;
   userScreenshoot:string;
   picture:string;
+  buttonvisible: boolean = true;
 
   cameraPreviewOpts : CameraPreviewOptions = {
     x: 0,
@@ -76,6 +77,7 @@ export class HomePage {
   
   async takeScreenshot() {
     try{
+      this.buttonvisible = false;
       await this.platform.ready();
 
       const res = await this.screenshot.save('jpg', 80, 'tuvieja.jpg');
@@ -105,25 +107,8 @@ export class HomePage {
       console.log(err);      
     });
   }
-  
-  subiryparticipar() {
-    //subir
-    this.storage.get('_idempleado_').then((val) => {
-      this.mdprovider.saveImage(this.imageText,val);
-    });
+
    
     //navegar a la siguiente pagina o al popup que te dice que ya estas adentro
-
-  }
-  descargar() {
-    this.base64ToGallery.base64ToGallery(this.imageText).then(
-      res => console.log('Saved image to gallery ', res),
-      err => console.log('Error saving image to gallery ', err)
-    );
-  }
-  descartar() {
-    this.imageText = "";
-    this.state = false;
-  }
 
 }
