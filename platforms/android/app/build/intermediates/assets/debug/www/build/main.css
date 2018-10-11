@@ -34032,7 +34032,6 @@ page-second .fish {
   padding-top: 20px;
   width: 235px;
   position: absolute;
-  left: 7%;
   z-index: 999;
 }
 
@@ -34041,18 +34040,7 @@ page-second .fish2 {
   width: 235px;
   height: 200px;
   position: absolute;
-  right: -33%;
   z-index: 999;
-}
-
-page-second div#fish2 {
-  position: relative;
-  left: 8%;
-}
-
-page-second div#fish3 {
-  position: relative;
-  left: 20%;
 }
 
 page-second .bubble {
@@ -34089,6 +34077,36 @@ page-second .x3 {
 page-second .x9 {
   top: 25%;
   right: 40%;
+  background: #00eeff;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  opacity: 0.6;
+  z-index: 999;
+}
+
+page-second .x2 {
+  top: 70%;
+  right: 40%;
+  background: #00eeff;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  opacity: 0.6;
+  z-index: 999;
+}
+
+page-second .x4 {
+  top: 40%;
+  left: 20%;
+  background: #00eeff;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  opacity: 0.6;
+  z-index: 999;
+}
+
+page-second .x5 {
+  top: 60%;
+  right: 15%;
   background: #00eeff;
   -webkit-transform: scale(0.9);
   transform: scale(0.9);

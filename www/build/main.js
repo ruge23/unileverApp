@@ -194,6 +194,8 @@ var FirstPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_base64_to_gallery__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_managedata_managedata__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_screenshot__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_jquery__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -209,12 +211,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the SecondPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 var SecondPage = /** @class */ (function () {
     function SecondPage(navCtrl, navParams, screenshot, base64, base64ToGallery, alertCtrl, mdprovider) {
         this.navCtrl = navCtrl;
@@ -226,15 +223,21 @@ var SecondPage = /** @class */ (function () {
         this.mdprovider = mdprovider;
         this.state = false;
         this.showUI = true;
-        this.fotoroja = navParams.data;
+        this.fotoroja = this.navParams.data.foto;
+        //console.log(this.navParams.data);
     }
     SecondPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad MixPage');
+        //this.setImage();
+    };
+    SecondPage.prototype.ionViewWillEnter = function () {
+        this.setImage();
     };
     SecondPage.prototype.takeScreenshot = function () {
         var _this = this;
+        var nombreFoto = (Math.floor(Math.random() * 20) + 1).toString();
         console.log("take");
-        this.screenshot.save('jpg', 80, 'myscreenshot.jpg').then(function (res) {
+        this.screenshot.save('jpg', 80, 'myscreenshot' + nombreFoto + '.jpg').then(function (res) {
             _this.screen = res.filePath;
             _this.imageText = _this.convertToBase64(res.filePath);
             _this.state = true;
@@ -242,8 +245,9 @@ var SecondPage = /** @class */ (function () {
     };
     SecondPage.prototype.subiryparticipar = function () {
         var _this = this;
+        var nombreFoto = (Math.floor(Math.random() * 20) + 1).toString();
         this.showUI = false;
-        this.screenshot.save('jpg', 80, 'myscreenshot.jpg').then(function (res) {
+        this.screenshot.save('jpg', 80, 'myscreenshot' + nombreFoto + '.jpg').then(function (res) {
             //this.screen = res.filePath;
             //this.imageText = this.convertToBase64(res.filePath);
             _this.base64.encodeFile(res.filePath).then(function (base64File) {
@@ -275,6 +279,10 @@ var SecondPage = /** @class */ (function () {
         ); */
         this.takeScreenshot();
     };
+    SecondPage.prototype.setImage = function () {
+        __WEBPACK_IMPORTED_MODULE_6_jquery___default()('.fish').css('margin-left', this.navParams.data.fish1);
+        __WEBPACK_IMPORTED_MODULE_6_jquery___default()('.fish2').css('margin-left', this.navParams.data.fish2);
+    };
     SecondPage.prototype.descartar = function () {
         this.showUI = true;
         this.navCtrl.pop();
@@ -293,7 +301,7 @@ var SecondPage = /** @class */ (function () {
         var alert = this.alertCtrl.create({
             title: '¡Ya estás participando!',
             cssClass: 'custom-alert',
-            message: "\n      <p>Muchas gracias por tu buena onda.</p>\n      <p>\u00A1Estate atento!</p>\n    ",
+            message: "\n      <p>Muchas gracias por tu buena onda.</p>\n    ",
             buttons: [
                 {
                     text: 'OK',
@@ -323,7 +331,7 @@ var SecondPage = /** @class */ (function () {
     };
     SecondPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-second',template:/*ion-inline-start:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/second/second.html"*/'<ion-content>\n  <img class="foto" id="sour" src="{{fotoroja}}" alt="">\n <div id="ionball"></div>\n <div class="fish" id="fish">\n  <div id="fish2">\n    <img src="../../assets/imgs/pez2.png" />\n  </div>\n  <div id="fish1">\n    <img src="../../assets/imgs/pez1.png" />\n  </div>\n  <div id="fish3">\n    <img src="../../assets/imgs/pez3.png" />\n  </div>\n</div>\n<div class="fish2" id="fishRight">\n  <div id="fish5">\n    <img src="../../assets/imgs/pez5.png" />\n  </div>\n  <div id="fish6">\n    <img src="../../assets/imgs/pez6.png" />\n  </div>\n  <div id="fish4">\n    <img src="../../assets/imgs/pez4.png" />\n  </div>\n</div>\n<div id="bubbles">\n  <div class="bubble x1">\n    <img src="../../assets/imgs/burbuja1.png" alt="">\n  </div>\n  <div class="bubble x3">\n    <img src="../../assets/imgs/burbuja2.png" alt="">      \n  </div>\n  <div class="bubble x9">\n    <img src="../../assets/imgs/burbuja1.png" alt="">      \n  </div>\n</div>\n <!-- <ion-fab bottom center>\n   <button (click)="subiryparticipar()" ion-fab color="secondary">Participar con esta foto</button>\n </ion-fab>\n <ion-fab bottom center>\n   <button (click)="descartar()" ion-fab color="primary">Descartar Foto</button>\n </ion-fab>\n <ion-fab bottom center>\n   <button (click)="descargar()" ion-fab color="danger">Guardar Foto</button>\n </ion-fab> -->\n <div class="botones-opcion-foto">\n   <button ion-button color="participar" *ngIf="showUI" (click)="subiryparticipar()">Participar con esta Foto</button>\n   <button ion-button color="guardar" *ngIf="showUI" (click)="takeScreenshot()">Guardar Foto</button>\n   <button ion-button color="descartar" *ngIf="showUI" (click)="descartar()">Descartar Foto</button>  \n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/second/second.html"*/,
+            selector: 'page-second',template:/*ion-inline-start:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/second/second.html"*/'<ion-content>\n  <img class="foto" id="sour" src="{{fotoroja}}" alt="">\n <div id="ionball"></div>\n <div class="fish" id="fish">\n  <div id="fish2">\n    <img src="../../assets/imgs/pez2.png" />\n  </div>\n  <div id="fish1">\n    <img src="../../assets/imgs/pez1.png" />\n  </div>\n  <div id="fish3">\n    <img src="../../assets/imgs/pez3.png" />\n  </div>\n</div>\n<div class="fish2" id="fishRight">\n  <div id="fish5">\n    <img src="../../assets/imgs/pez5.png" />\n  </div>\n  <div id="fish6">\n    <img src="../../assets/imgs/pez6.png" />\n  </div>\n  <div id="fish4">\n    <img src="../../assets/imgs/pez4.png" />\n  </div>\n</div>\n<div id="bubbles">\n  <div class="bubble x1">\n    <img src="../../assets/imgs/burbuja1.png" alt="">\n  </div>\n  <div class="bubble x3">\n    <img src="../../assets/imgs/burbuja2.png" alt="">      \n  </div>\n  <div class="bubble x9">\n    <img src="../../assets/imgs/burbuja1.png" alt="">      \n  </div>\n  <div class="bubble x2">\n    <img src="../../assets/imgs/burbuja1.png" alt="">\n  </div>\n  <div class="bubble x4">\n    <img src="../../assets/imgs/burbuja2.png" alt="">      \n  </div>\n  <div class="bubble x5">\n    <img src="../../assets/imgs/burbuja1.png" alt="">      \n  </div>\n</div>\n <!-- <ion-fab bottom center>\n   <button (click)="subiryparticipar()" ion-fab color="secondary">Participar con esta foto</button>\n </ion-fab>\n <ion-fab bottom center>\n   <button (click)="descartar()" ion-fab color="primary">Descartar Foto</button>\n </ion-fab>\n <ion-fab bottom center>\n   <button (click)="descargar()" ion-fab color="danger">Guardar Foto</button>\n </ion-fab> -->\n <div class="botones-opcion-foto">\n   <button ion-button color="participar" *ngIf="showUI" (click)="subiryparticipar()">Participar con esta Foto</button>\n   <button ion-button color="guardar" *ngIf="showUI" (click)="takeScreenshot()">Guardar Foto</button>\n   <button ion-button color="descartar" *ngIf="showUI" (click)="descartar()">Descartar Foto</button>  \n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/second/second.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_screenshot__["a" /* Screenshot */],
             __WEBPACK_IMPORTED_MODULE_0__ionic_native_base64__["a" /* Base64 */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_base64_to_gallery__["a" /* Base64ToGallery */],
@@ -359,11 +367,11 @@ webpackEmptyAsyncContext.id = 141;
 
 var map = {
 	"../pages/first/first.module": [
-		407,
+		408,
 		1
 	],
 	"../pages/second/second.module": [
-		408,
+		409,
 		0
 	]
 };
@@ -391,12 +399,14 @@ module.exports = webpackAsyncContext;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__second_second__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera_preview__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_screenshot__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_base64__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_base64_to_gallery__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_managedata_managedata__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera_preview__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_screenshot__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_base64__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_base64_to_gallery__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_managedata_managedata__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_storage__ = __webpack_require__(208);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -450,6 +460,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
+
 var HomePage = /** @class */ (function () {
     function HomePage(platform, navCtrl, cameraPreview, screenshot, base64, base64ToGallery, mdprovider, storage) {
         this.platform = platform;
@@ -490,7 +501,11 @@ var HomePage = /** @class */ (function () {
         var _this = this;
         this.cameraPreview.takePicture(this.pictureOpts).then(function (imageData) {
             _this.picture = 'data:image/jpeg;base64,' + imageData;
-            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__second_second__["a" /* SecondPage */], _this.picture);
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__second_second__["a" /* SecondPage */], {
+                foto: _this.picture,
+                fish1: __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.fish').css('margin-left'),
+                fish2: __WEBPACK_IMPORTED_MODULE_3_jquery___default()('.fish2').css('margin-left')
+            });
         }, function (err) {
             _this.picture = 'assets/img/test.jpg';
         });
@@ -562,12 +577,12 @@ var HomePage = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera_preview__["a" /* CameraPreview */],
-            __WEBPACK_IMPORTED_MODULE_4__ionic_native_screenshot__["a" /* Screenshot */],
-            __WEBPACK_IMPORTED_MODULE_5__ionic_native_base64__["a" /* Base64 */],
-            __WEBPACK_IMPORTED_MODULE_6__ionic_native_base64_to_gallery__["a" /* Base64ToGallery */],
-            __WEBPACK_IMPORTED_MODULE_7__providers_managedata_managedata__["a" /* ManagedataProvider */],
-            __WEBPACK_IMPORTED_MODULE_8__ionic_storage__["b" /* Storage */]])
+            __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera_preview__["a" /* CameraPreview */],
+            __WEBPACK_IMPORTED_MODULE_5__ionic_native_screenshot__["a" /* Screenshot */],
+            __WEBPACK_IMPORTED_MODULE_6__ionic_native_base64__["a" /* Base64 */],
+            __WEBPACK_IMPORTED_MODULE_7__ionic_native_base64_to_gallery__["a" /* Base64ToGallery */],
+            __WEBPACK_IMPORTED_MODULE_8__providers_managedata_managedata__["a" /* ManagedataProvider */],
+            __WEBPACK_IMPORTED_MODULE_9__ionic_storage__["b" /* Storage */]])
     ], HomePage);
     return HomePage;
 }());
@@ -576,13 +591,13 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 250:
+/***/ 251:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(251);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(259);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -590,7 +605,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 258:
+/***/ 259:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -598,19 +613,19 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(403);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(404);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_first_first__ = __webpack_require__(130);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_second_second__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera_preview__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera_preview__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_screenshot__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_managedata_managedata__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_base64__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_base64_to_gallery__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_storage__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_common_http__ = __webpack_require__(404);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_storage__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_common_http__ = __webpack_require__(405);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_http__ = __webpack_require__(186);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -684,15 +699,15 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 403:
+/***/ 404:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(249);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_first_first__ = __webpack_require__(130);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -739,7 +754,7 @@ var MyApp = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ManagedataProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(186);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operators__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -818,5 +833,5 @@ var ManagedataProvider = /** @class */ (function () {
 
 /***/ })
 
-},[250]);
+},[251]);
 //# sourceMappingURL=main.js.map

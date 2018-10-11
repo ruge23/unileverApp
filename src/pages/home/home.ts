@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
 import { SecondPage } from './../second/second';
-
+import  jQuery  from 'jquery';
 import { CameraPreview, CameraPreviewOptions, CameraPreviewPictureOptions } from '@ionic-native/camera-preview';
 import { Screenshot } from '@ionic-native/screenshot';
 import { Base64 } from '@ionic-native/base64';
@@ -62,10 +62,14 @@ export class HomePage {
       )
   }
 
-  takePhoto(){
+  takePhoto(){   
     this.cameraPreview.takePicture(this.pictureOpts).then((imageData)=>{
       this.picture = 'data:image/jpeg;base64,' + imageData;
-      this.navCtrl.push(SecondPage, this.picture);
+      this.navCtrl.push(SecondPage, { 
+        foto:this.picture,
+        fish1:jQuery('.fish').css('margin-left'),
+        fish2:jQuery('.fish2').css('margin-left')
+      });
     }, (err)=>{
       this.picture = 'assets/img/test.jpg'
     });

@@ -4,13 +4,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 import { ManagedataProvider } from '../../providers/managedata/managedata';
 import { Screenshot } from '@ionic-native/screenshot';
-
-/**
- * Generated class for the SecondPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import  jQuery  from 'jquery';
 
 @IonicPage()
 @Component({
@@ -25,21 +19,29 @@ export class SecondPage {
  showUI: boolean = true;
  imageText: string;
  idEmpleado: number;
+ 
 
  constructor(public navCtrl: NavController, public navParams: NavParams, private screenshot: Screenshot,
    private base64: Base64,private base64ToGallery: Base64ToGallery,
    private alertCtrl : AlertController,   
-   private mdprovider: ManagedataProvider){//,private storage: Storage) {
-   this.fotoroja = navParams.data;
+   private mdprovider: ManagedataProvider){
+    this.fotoroja = this.navParams.data.foto;
+   //console.log(this.navParams.data);
  }
 
  ionViewDidLoad() {
    console.log('ionViewDidLoad MixPage');
+   //this.setImage();
  }
 
+ ionViewWillEnter(){
+   this.setImage();
+ } 
+
  takeScreenshot() {
+  let nombreFoto = (Math.floor(Math.random()*20)+1).toString();   
    console.log("take");
-   this.screenshot.save('jpg', 80, 'myscreenshot.jpg').then(res => {
+   this.screenshot.save('jpg', 80, 'myscreenshot'+nombreFoto+'.jpg').then(res => {
      this.screen = res.filePath;
      this.imageText = this.convertToBase64(res.filePath);
      this.state = true;
@@ -47,8 +49,9 @@ export class SecondPage {
  }
 
  subiryparticipar() {
+  let nombreFoto = (Math.floor(Math.random()*20)+1).toString();
   this.showUI = false;
-  this.screenshot.save('jpg', 80, 'myscreenshot.jpg').then(res => {
+  this.screenshot.save('jpg', 80, 'myscreenshot'+nombreFoto+'.jpg').then(res => {
     //this.screen = res.filePath;
     //this.imageText = this.convertToBase64(res.filePath);
     
@@ -85,10 +88,15 @@ export class SecondPage {
    this.takeScreenshot();
  }
 
- descartar() {
-   this.showUI = true;
-   this.navCtrl.pop();
+ setImage(){
+  jQuery('.fish').css('margin-left', this.navParams.data.fish1);
+  jQuery('.fish2').css('margin-left', this.navParams.data.fish2) 
  }
+ 
+ descartar() {
+  this.showUI = true;
+  this.navCtrl.pop();
+}
 
  convertToBase64(imagePath): any {
    let filePath: string = imagePath;
@@ -107,7 +115,6 @@ export class SecondPage {
     message: 
     `
       <p>Muchas gracias por tu buena onda.</p>
-      <p>¡Estate atento!</p>
     `,
     buttons:[
       {

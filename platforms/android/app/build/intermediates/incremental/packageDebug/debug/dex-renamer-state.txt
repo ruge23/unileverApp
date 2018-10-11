@@ -1,4 +1,4 @@
-#Thu Oct 11 13:04:33 ART 2018
+#Thu Oct 11 16:14:52 ART 2018
 base.0=/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
