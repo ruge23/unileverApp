@@ -75,7 +75,7 @@ export class FirstPage {
           text: 'Continuar',
           role: 'cancel',
           handler: data =>{
-            if(data.nombre != "" || data.apellido != "" || data.id != ""){
+            if(data.nombre != "" && data.apellido != "" && data.id != ""){
               this.data = this.manager.crearParticipante(data.nombre, data.apellido, data.id);
               this.data.subscribe(result => {
                 console.log('saf',result.json().status);

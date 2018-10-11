@@ -23,7 +23,73 @@ page-second {
         position: absolute;
         top: 0;
     }
-    img{
+    #fish,
+    #fishRight {
+        top: 1em;
+    }
+    /* Fish Animation */
+    .fish, 
+    .fish2{
+        overflow:hidden;
+    }
+    .fish {
+        padding-top: 20px;
+        width: 235px;
+        position: absolute;
+        left: 7%;
+        z-index: 999;
+    }
+    .fish2 {
+        padding-top: 30px;
+        width: 235px;
+        height: 200px;
+        position: absolute;
+        right: -33%;
+        z-index: 999;
+    }
+    div#fish2{
+        position: relative;
+        left: 8%;
+    }
+    div#fish3{
+        position: relative;
+        left: 20%;
+    }
+    .bubble {
+        width: 20px;
+        height: 20px;
+        background: #00eeff;
+        border-radius: 200px;
+        position: absolute;
+        z-index: 999;
+    }
+    .x1 {
+        top: 50%;
+        background: #00eeff;
+        left: 40%;
+        transform: scale(0.9);
+        opacity: 0.6;
+        position: absolute;
+        z-index: 999;
+    }
+    .x3 {
+        top: 10%;
+        background: #00eeff;
+        left: 120px;
+        transform: scale(0.9);
+        opacity: 0.6;
+        position: absolute;
+        z-index: 999;
+    }
+    .x9 {
+        top: 25%;
+        right: 40%;
+        background: #00eeff;
+        transform: scale(0.9);
+        opacity: 0.6;
+        z-index: 999;
+    }
+    img.foto{
         border: 5px solid #365454;
         width: 80%;
     }
