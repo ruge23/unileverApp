@@ -1,10 +1,9 @@
-import { Base64 } from '@ionic-native/base64';
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 import { ManagedataProvider } from '../../providers/managedata/managedata';
-import { Screenshot } from '@ionic-native/screenshot';
 import  jQuery  from 'jquery';
+import { Platform } from 'ionic-angular';
+import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 
 @IonicPage()
 @Component({
@@ -21,11 +20,10 @@ export class SecondPage {
  idEmpleado: number;
  
 
- constructor(public navCtrl: NavController, public navParams: NavParams, private screenshot: Screenshot,
-   private base64: Base64,private base64ToGallery: Base64ToGallery,
+ constructor(public navCtrl: NavController, public navParams: NavParams,
    private alertCtrl : AlertController,   
-   private mdprovider: ManagedataProvider){
-    this.fotoroja = this.navParams.data.foto;
+   private mdprovider: ManagedataProvider, public platform: Platform, public base64ToGallery: Base64ToGallery){
+    this.fotoroja = this.navParams.data;
    //console.log(this.navParams.data);
  }
 
@@ -35,10 +33,11 @@ export class SecondPage {
  }
 
  ionViewWillEnter(){
-   this.setImage();
- } 
+   /* this.setImage(); */
 
- takeScreenshot() {
+  }
+
+/*  takeScreenshot() {
   let nombreFoto = (Math.floor(Math.random()*20)+1).toString();   
    console.log("take");
    this.screenshot.save('jpg', 80, 'myscreenshot'+nombreFoto+'.jpg').then(res => {
@@ -46,31 +45,28 @@ export class SecondPage {
      this.imageText = this.convertToBase64(res.filePath);
      this.state = true;
    });
- }
+ } */
 
  subiryparticipar() {
-  let nombreFoto = (Math.floor(Math.random()*20)+1).toString();
+  /* let nombreFoto = (Math.floor(Math.random()*20)+1).toString();
   this.showUI = false;
   this.screenshot.save('jpg', 80, 'myscreenshot'+nombreFoto+'.jpg').then(res => {
     //this.screen = res.filePath;
     //this.imageText = this.convertToBase64(res.filePath);
     
     this.base64.encodeFile(res.filePath).then((base64File: string) => {
-      console.log(base64File);
-      this.mdprovider.subirImagen(base64File,1).then((res)=>{
+      console.log(base64File); */
+      this.mdprovider.subirImagen(this.fotoroja,1).then((res)=>{
         if(res['status']===200){
           this.showAlertConfirm();
         }else if(res['status']===400){
           this.showAlertError();
         }
-      })
+      });
     this.state = true;
-    }, (err) => {
-      this.showAlertError();
-      console.log(err);
-    });
     
-  });
+    
+  
    //subir
   /*  this.storage.get('_idempleado_').then((val) => {
      this.mdprovider.saveImage(this.imageText,val);
@@ -81,24 +77,24 @@ export class SecondPage {
  }
 
  descargar() {
-   /* this.base64ToGallery.base64ToGallery(this.imageText).then(
+   this.base64ToGallery.base64ToGallery(this.fotoroja).then(
      res => console.log('Saved image to gallery ', res),
      err => console.log('Error saving image to gallery ', err)
-   ); */
-   this.takeScreenshot();
+   ); 
+  
  }
 
- setImage(){
+/*  setImage(){
   jQuery('.fish').css('margin-left', this.navParams.data.fish1);
   jQuery('.fish2').css('margin-left', this.navParams.data.fish2) 
- }
+ } */
  
  descartar() {
   this.showUI = true;
   this.navCtrl.pop();
 }
 
- convertToBase64(imagePath): any {
+ /* convertToBase64(imagePath): any {
    let filePath: string = imagePath;
    this.base64.encodeFile(filePath).then((base64File: string) => {
      console.log(base64File);
@@ -106,7 +102,7 @@ export class SecondPage {
    }, (err) => {
      console.log(err);
    });
- }
+ } */
 
  showAlertConfirm(){
   const alert = this.alertCtrl.create({

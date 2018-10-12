@@ -1,20 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
 import { SecondPage } from './../second/second';
-import  jQuery  from 'jquery';
 import { CameraPreview, CameraPreviewOptions, CameraPreviewPictureOptions } from '@ionic-native/camera-preview';
-import { Screenshot } from '@ionic-native/screenshot';
-import { Base64 } from '@ionic-native/base64';
-import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 import { ManagedataProvider } from '../../providers/managedata/managedata';
-import { Storage } from '@ionic/storage';
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  @ViewChild('homepagecanvas') homepagecanvas: ElementRef;
 
+  private homePageCanvasCtx: any;
   screen: any;
   state: boolean = false;
   showUI: boolean = true;
@@ -47,11 +45,7 @@ export class HomePage {
     private platform: Platform,
     public navCtrl: NavController, 
     private cameraPreview: CameraPreview,
-    private screenshot: Screenshot, 
-    private base64: Base64,
-    private base64ToGallery: Base64ToGallery,
-    private mdprovider: ManagedataProvider,
-    private storage: Storage) {
+    private mdprovider: ManagedataProvider) {
       this.cameraPreview.startCamera(this.cameraPreviewOpts).then(
         (res) => {
           console.log(res)
@@ -65,21 +59,57 @@ export class HomePage {
   takePhoto(){   
     this.cameraPreview.takePicture(this.pictureOpts).then((imageData)=>{
       this.picture = 'data:image/jpeg;base64,' + imageData;
-      this.navCtrl.push(SecondPage, { 
-        foto:this.picture,
+      //Aca tengo que unirlo a las otras imagenes
+      let mergedImage = this.mergeImages(this.picture);
+      this.navCtrl.push(SecondPage, mergedImage); 
+        /* foto:mergedImage,
         fish1:jQuery('.fish').css('margin-left'),
         fish2:jQuery('.fish2').css('margin-left')
-      });
+      }); */
     }, (err)=>{
       this.picture = 'assets/img/test.jpg'
     });
+  }
+
+  mergeImages(foto): string{
+    const exampleImage = document.createElement('img');
+    exampleImage.setAttribute('src', foto);
+    const exampleImage2 = document.createElement('img');
+    exampleImage2.setAttribute('src', '../../assets/imgs/bg-filtro.png');
+
+    ///////////////////////////
+    const exampleImage3 = document.createElement('img');
+    exampleImage3.setAttribute('src', '../../assets/imgs/pez1.png');
+    const exampleImage4 = document.createElement('img');
+    exampleImage4.setAttribute('src', '../../assets/imgs/pez2.png');
+
+    //this.srcimage = '../../assets/imgs/cualquiera.jpg';
+    this.homePageCanvasCtx = this.homepagecanvas.nativeElement.getContext('2d');
+
+    this.platform.ready().then((readySource) => {
+      console.log('Width: ' + this.platform.width());
+      console.log('Height: ' + this.platform.height());
+      this.homePageCanvasCtx.canvas.width = this.platform.width().toString();
+      this.homePageCanvasCtx.canvas.height = this.platform.height().toString();
+
+
+      setTimeout(() => {
+        this.homePageCanvasCtx.drawImage(exampleImage, 0, 0,this.platform.width().toString(),this.platform.height().toString());
+        this.homePageCanvasCtx.drawImage(exampleImage2, 0, 0,this.platform.width().toString(),this.platform.height().toString());
+        this.homePageCanvasCtx.drawImage(exampleImage3, 10, 0);
+        this.homePageCanvasCtx.drawImage(exampleImage4, 120, 0);
+        console.log("rendered from provider!")
+
+      }, 3000);
+    });
+    return this.homepagecanvas.nativeElement.toDataURL();
   }
 
   refresh() {
     window['location'].reload();
   }
   
-  async takeScreenshot() {
+/*   async takeScreenshot() {
     try{
       this.buttonvisible = false;
       await this.platform.ready();
@@ -89,9 +119,9 @@ export class HomePage {
     }catch(e){
       console.error(e)
     }
-  }
+  } */
 
-  async takeScreenshotGetUri() {
+/*   async takeScreenshotGetUri() {
     try{
       await this.platform.ready();
 
@@ -100,9 +130,9 @@ export class HomePage {
     }catch(e){
       console.error(e)
     }
-  }
+  } */
  
-  convertToBase64(imagePath): any {
+/*   convertToBase64(imagePath): any {
     let filePath: string = imagePath;
     this.base64.encodeFile(filePath).then((base64File: string) => {
       console.log(base64File);
@@ -110,7 +140,7 @@ export class HomePage {
     }, (err) => {
       console.log(err);      
     });
-  }
+  } */
 
    
     //navegar a la siguiente pagina o al popup que te dice que ya estas adentro
