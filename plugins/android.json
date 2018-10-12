@@ -34,6 +34,9 @@
     },
     "com-badrit-base64": {
       "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-base64-to-gallery": {
+      "PACKAGE_NAME": "io.ionic.starter"
     }
   },
   "dependent_plugins": {}

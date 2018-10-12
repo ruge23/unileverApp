@@ -24,7 +24,7 @@ export class SecondPage {
    private alertCtrl : AlertController,   
    private mdprovider: ManagedataProvider, public platform: Platform, public base64ToGallery: Base64ToGallery){
     this.fotoroja = this.navParams.data;
-   //console.log(this.navParams.data);
+   console.log('data',this.navParams.data);
  }
 
  ionViewDidLoad() {

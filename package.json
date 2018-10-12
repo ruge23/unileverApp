@@ -64,7 +64,8 @@
       },
       "cordova-plugin-ionic-keyboard": {},
       "com.darktalker.cordova.screenshot": {},
-      "com-badrit-base64": {}
+      "com-badrit-base64": {},
+      "cordova-base64-to-gallery": {}
     },
     "platforms": [
       "android"

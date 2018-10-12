@@ -72,6 +72,19 @@ export class HomePage {
   }
 
   mergeImages(foto): string{
+    let fishtop1 = Math.round(document.getElementById("fish1").getBoundingClientRect().left);
+    let fishleft1 = Math.round(document.getElementById("fish1").getBoundingClientRect().top);
+    let fishtop2 = Math.round(document.getElementById("fish2").getBoundingClientRect().left);
+    let fishleft2 = Math.round(document.getElementById("fish2").getBoundingClientRect().top);
+    let fishtop3 = Math.round(document.getElementById("fish3").getBoundingClientRect().left);
+    let fishleft3 = Math.round(document.getElementById("fish3").getBoundingClientRect().top);
+    let fishtop4 = Math.round(document.getElementById("fish4").getBoundingClientRect().left);
+    let fishleft4 = Math.round(document.getElementById("fish4").getBoundingClientRect().top);
+    let fishtop5 = Math.round(document.getElementById("fish5").getBoundingClientRect().left);
+    let fishleft5 = Math.round(document.getElementById("fish5").getBoundingClientRect().top);
+    let fishtop6 = Math.round(document.getElementById("fish6").getBoundingClientRect().left);
+    let fishleft6 = Math.round(document.getElementById("fish6").getBoundingClientRect().top);
+    
     const exampleImage = document.createElement('img');
     exampleImage.setAttribute('src', foto);
     const exampleImage2 = document.createElement('img');
@@ -82,6 +95,14 @@ export class HomePage {
     exampleImage3.setAttribute('src', '../../assets/imgs/pez1.png');
     const exampleImage4 = document.createElement('img');
     exampleImage4.setAttribute('src', '../../assets/imgs/pez2.png');
+    const exampleImage5 = document.createElement('img');
+    exampleImage5.setAttribute('src', '../../assets/imgs/pez3.png');
+    const exampleImage6 = document.createElement('img');
+    exampleImage6.setAttribute('src', '../../assets/imgs/pez4.png');
+    const exampleImage7 = document.createElement('img');
+    exampleImage7.setAttribute('src', '../../assets/imgs/pez5.png');
+    const exampleImage8 = document.createElement('img');
+    exampleImage8.setAttribute('src', '../../assets/imgs/pez6.png');
 
     //this.srcimage = '../../assets/imgs/cualquiera.jpg';
     this.homePageCanvasCtx = this.homepagecanvas.nativeElement.getContext('2d');
@@ -94,13 +115,18 @@ export class HomePage {
 
 
       setTimeout(() => {
+        console.log('fish',fishtop1,fishleft1);
         this.homePageCanvasCtx.drawImage(exampleImage, 0, 0,this.platform.width().toString(),this.platform.height().toString());
         this.homePageCanvasCtx.drawImage(exampleImage2, 0, 0,this.platform.width().toString(),this.platform.height().toString());
-        this.homePageCanvasCtx.drawImage(exampleImage3, 10, 0);
-        this.homePageCanvasCtx.drawImage(exampleImage4, 120, 0);
+        this.homePageCanvasCtx.drawImage(exampleImage3, fishtop1,fishleft1);
+        this.homePageCanvasCtx.drawImage(exampleImage4, fishtop2,fishleft2);
+        this.homePageCanvasCtx.drawImage(exampleImage5, fishtop3,fishleft3);
+        this.homePageCanvasCtx.drawImage(exampleImage6, fishtop4,fishleft4);
+        this.homePageCanvasCtx.drawImage(exampleImage7, fishtop5,fishleft5);
+        this.homePageCanvasCtx.drawImage(exampleImage8, fishtop6,fishleft6);
         console.log("rendered from provider!")
 
-      }, 3000);
+      }, 5000);
     });
     return this.homepagecanvas.nativeElement.toDataURL();
   }

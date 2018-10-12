@@ -169,7 +169,7 @@ var FirstPage = /** @class */ (function () {
     };
     FirstPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-first',template:/*ion-inline-start:"C:\xampp\htdocs\unilever\app\unileverApp\src\pages\first\first.html"*/'<ion-content>\n\n  <div class="logo">\n\n    <img src="../../assets/imgs/img/logo-uni-final.png">\n\n  </div>\n\n  <div class="botones-index">\n\n    <a href="#" (click)="showAlert()" class="btn btn-como">¿Cómo participar?</a>\n\n    <a href="#" (click)="showAlertEmpezar()" class="btn btn-empezar">¡Empezar!</a>    \n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\xampp\htdocs\unilever\app\unileverApp\src\pages\first\first.html"*/,
+            selector: 'page-first',template:/*ion-inline-start:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/first/first.html"*/'<ion-content>\n  <div class="logo">\n    <img src="../../assets/imgs/img/logo-uni-final.png">\n  </div>\n  <div class="botones-index">\n    <a href="#" (click)="showAlert()" class="btn btn-como">¿Cómo participar?</a>\n    <a href="#" (click)="showAlertEmpezar()" class="btn btn-empezar">¡Empezar!</a>    \n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/first/first.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavParams */],
@@ -217,7 +217,7 @@ var SecondPage = /** @class */ (function () {
         this.state = false;
         this.showUI = true;
         this.fotoroja = this.navParams.data;
-        //console.log(this.navParams.data);
+        console.log('data', this.navParams.data);
     }
     SecondPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad MixPage');
@@ -315,7 +315,7 @@ var SecondPage = /** @class */ (function () {
     };
     SecondPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-second',template:/*ion-inline-start:"C:\xampp\htdocs\unilever\app\unileverApp\src\pages\second\second.html"*/'<ion-content>\n\n  <canvas #homepagecanvas></canvas>\n\n <div id="ionball"></div>\n\n <div class="fish" id="fish">\n\n  <div id="fish2">\n\n    <img src="../../assets/imgs/pez2.png" />\n\n  </div>\n\n  <div id="fish1">\n\n    <img src="../../assets/imgs/pez1.png" />\n\n  </div>\n\n  <div id="fish3">\n\n    <img src="../../assets/imgs/pez3.png" />\n\n  </div>\n\n</div>\n\n<div class="fish2" id="fishRight">\n\n  <div id="fish5">\n\n    <img src="../../assets/imgs/pez5.png" />\n\n  </div>\n\n  <div id="fish6">\n\n    <img src="../../assets/imgs/pez6.png" />\n\n  </div>\n\n  <div id="fish4">\n\n    <img src="../../assets/imgs/pez4.png" />\n\n  </div>\n\n</div>\n\n<div id="bubbles">\n\n  <div class="bubble x1">\n\n    <img src="../../assets/imgs/burbuja1.png" alt="">\n\n  </div>\n\n  <div class="bubble x3">\n\n    <img src="../../assets/imgs/burbuja2.png" alt="">      \n\n  </div>\n\n  <div class="bubble x9">\n\n    <img src="../../assets/imgs/burbuja1.png" alt="">      \n\n  </div>\n\n  <div class="bubble x2">\n\n    <img src="../../assets/imgs/burbuja1.png" alt="">\n\n  </div>\n\n  <div class="bubble x4">\n\n    <img src="../../assets/imgs/burbuja2.png" alt="">      \n\n  </div>\n\n  <div class="bubble x5">\n\n    <img src="../../assets/imgs/burbuja1.png" alt="">      \n\n  </div>\n\n</div>\n\n <!-- <ion-fab bottom center>\n\n   <button (click)="subiryparticipar()" ion-fab color="secondary">Participar con esta foto</button>\n\n </ion-fab>\n\n <ion-fab bottom center>\n\n   <button (click)="descartar()" ion-fab color="primary">Descartar Foto</button>\n\n </ion-fab>\n\n <ion-fab bottom center>\n\n   <button (click)="descargar()" ion-fab color="danger">Guardar Foto</button>\n\n </ion-fab> -->\n\n <div class="botones-opcion-foto">\n\n   <button ion-button color="participar" *ngIf="showUI" (click)="subiryparticipar()">Participar con esta Foto</button>\n\n   <button ion-button color="guardar" *ngIf="showUI" (click)="takeScreenshot()">Guardar Foto</button>\n\n   <button ion-button color="descartar" *ngIf="showUI" (click)="descartar()">Descartar Foto</button>  \n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\xampp\htdocs\unilever\app\unileverApp\src\pages\second\second.html"*/,
+            selector: 'page-second',template:/*ion-inline-start:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/second/second.html"*/'<ion-content>\n <img src="{{fotoroja}}">\n<div id="bubbles">\n  <div class="bubble x1">\n    <img src="../../assets/imgs/burbuja1.png" alt="">\n  </div>\n  <div class="bubble x3">\n    <img src="../../assets/imgs/burbuja2.png" alt="">      \n  </div>\n  <div class="bubble x9">\n    <img src="../../assets/imgs/burbuja1.png" alt="">      \n  </div>\n  <div class="bubble x2">\n    <img src="../../assets/imgs/burbuja1.png" alt="">\n  </div>\n  <div class="bubble x4">\n    <img src="../../assets/imgs/burbuja2.png" alt="">      \n  </div>\n  <div class="bubble x5">\n    <img src="../../assets/imgs/burbuja1.png" alt="">      \n  </div>\n</div>\n <!-- <ion-fab bottom center>\n   <button (click)="subiryparticipar()" ion-fab color="secondary">Participar con esta foto</button>\n </ion-fab>\n <ion-fab bottom center>\n   <button (click)="descartar()" ion-fab color="primary">Descartar Foto</button>\n </ion-fab>\n <ion-fab bottom center>\n   <button (click)="descargar()" ion-fab color="danger">Guardar Foto</button>\n </ion-fab> -->\n <div class="botones-opcion-foto">\n   <button ion-button color="participar" *ngIf="showUI" (click)="subiryparticipar()">Participar con esta Foto</button>\n   <button ion-button color="guardar" *ngIf="showUI" (click)="descargar()">Guardar Foto</button>\n   <button ion-button color="descartar" *ngIf="showUI" (click)="descartar()">Descartar Foto</button>  \n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/second/second.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
@@ -447,6 +447,18 @@ var HomePage = /** @class */ (function () {
     };
     HomePage.prototype.mergeImages = function (foto) {
         var _this = this;
+        var fishtop1 = Math.round(document.getElementById("fish1").getBoundingClientRect().left);
+        var fishleft1 = Math.round(document.getElementById("fish1").getBoundingClientRect().top);
+        var fishtop2 = Math.round(document.getElementById("fish2").getBoundingClientRect().left);
+        var fishleft2 = Math.round(document.getElementById("fish2").getBoundingClientRect().top);
+        var fishtop3 = Math.round(document.getElementById("fish3").getBoundingClientRect().left);
+        var fishleft3 = Math.round(document.getElementById("fish3").getBoundingClientRect().top);
+        var fishtop4 = Math.round(document.getElementById("fish4").getBoundingClientRect().left);
+        var fishleft4 = Math.round(document.getElementById("fish4").getBoundingClientRect().top);
+        var fishtop5 = Math.round(document.getElementById("fish5").getBoundingClientRect().left);
+        var fishleft5 = Math.round(document.getElementById("fish5").getBoundingClientRect().top);
+        var fishtop6 = Math.round(document.getElementById("fish6").getBoundingClientRect().left);
+        var fishleft6 = Math.round(document.getElementById("fish6").getBoundingClientRect().top);
         var exampleImage = document.createElement('img');
         exampleImage.setAttribute('src', foto);
         var exampleImage2 = document.createElement('img');
@@ -456,6 +468,14 @@ var HomePage = /** @class */ (function () {
         exampleImage3.setAttribute('src', '../../assets/imgs/pez1.png');
         var exampleImage4 = document.createElement('img');
         exampleImage4.setAttribute('src', '../../assets/imgs/pez2.png');
+        var exampleImage5 = document.createElement('img');
+        exampleImage5.setAttribute('src', '../../assets/imgs/pez3.png');
+        var exampleImage6 = document.createElement('img');
+        exampleImage6.setAttribute('src', '../../assets/imgs/pez4.png');
+        var exampleImage7 = document.createElement('img');
+        exampleImage7.setAttribute('src', '../../assets/imgs/pez5.png');
+        var exampleImage8 = document.createElement('img');
+        exampleImage8.setAttribute('src', '../../assets/imgs/pez6.png');
         //this.srcimage = '../../assets/imgs/cualquiera.jpg';
         this.homePageCanvasCtx = this.homepagecanvas.nativeElement.getContext('2d');
         this.platform.ready().then(function (readySource) {
@@ -464,12 +484,17 @@ var HomePage = /** @class */ (function () {
             _this.homePageCanvasCtx.canvas.width = _this.platform.width().toString();
             _this.homePageCanvasCtx.canvas.height = _this.platform.height().toString();
             setTimeout(function () {
+                console.log('fish', fishtop1, fishleft1);
                 _this.homePageCanvasCtx.drawImage(exampleImage, 0, 0, _this.platform.width().toString(), _this.platform.height().toString());
                 _this.homePageCanvasCtx.drawImage(exampleImage2, 0, 0, _this.platform.width().toString(), _this.platform.height().toString());
-                _this.homePageCanvasCtx.drawImage(exampleImage3, 10, 0);
-                _this.homePageCanvasCtx.drawImage(exampleImage4, 120, 0);
+                _this.homePageCanvasCtx.drawImage(exampleImage3, fishtop1, fishleft1);
+                _this.homePageCanvasCtx.drawImage(exampleImage4, fishtop2, fishleft2);
+                _this.homePageCanvasCtx.drawImage(exampleImage5, fishtop3, fishleft3);
+                _this.homePageCanvasCtx.drawImage(exampleImage6, fishtop4, fishleft4);
+                _this.homePageCanvasCtx.drawImage(exampleImage7, fishtop5, fishleft5);
+                _this.homePageCanvasCtx.drawImage(exampleImage8, fishtop6, fishleft6);
                 console.log("rendered from provider!");
-            }, 3000);
+            }, 5000);
         });
         return this.homepagecanvas.nativeElement.toDataURL();
     };
@@ -478,16 +503,18 @@ var HomePage = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])('homepagecanvas'),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */]) === "function" && _a || Object)
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */])
     ], HomePage.prototype, "homepagecanvas", void 0);
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\xampp\htdocs\unilever\app\unileverApp\src\pages\home\home.html"*/'<ion-content>\n\n  <div id="ionball"></div>\n\n  <img class="foto" *ngIf="state" [src]="userScreenshoot"/>\n\n  <div class="fish" id="fish">\n\n    <div id="fish2">\n\n      <img src="../../assets/imgs/pez2.png" />\n\n    </div>\n\n    <div id="fish1">\n\n      <img src="../../assets/imgs/pez1.png" />\n\n    </div>\n\n    <div id="fish3">\n\n      <img src="../../assets/imgs/pez3.png" />\n\n    </div>\n\n  </div>\n\n  <div class="fish2" id="fishRight">\n\n    <div id="fish5">\n\n      <img src="../../assets/imgs/pez5.png" />\n\n    </div>\n\n    <div id="fish6">\n\n      <img src="../../assets/imgs/pez6.png" />\n\n    </div>\n\n    <div id="fish4">\n\n      <img src="../../assets/imgs/pez4.png" />\n\n    </div>\n\n  </div>\n\n  <div id="bubbles">\n\n    <div class="bubble x1">\n\n      <img src="../../assets/imgs/burbuja1.png" alt="">\n\n    </div>\n\n    <div class="bubble x2">\n\n      <img src="../../assets/imgs/burbuja2.png" alt="">      \n\n    </div>\n\n    <div class="bubble x3">\n\n      <img src="../../assets/imgs/burbuja1.png" alt="">      \n\n    </div>\n\n    <div class="bubble x4">\n\n      <img src="../../assets/imgs/burbuja2.png" alt="">            \n\n    </div>\n\n    <div class="bubble x5">\n\n      <img src="../../assets/imgs/burbuja1.png" alt="">\n\n    </div>\n\n    <div class="bubble x6">\n\n      <img src="../../assets/imgs/burbuja2.png" alt="">            \n\n    </div>\n\n    <div class="bubble x7">\n\n      <img src="../../assets/imgs/burbuja1.png" alt="">\n\n    </div>\n\n    <div class="bubble x8">\n\n      <img src="../../assets/imgs/burbuja2.png" alt="">            \n\n    </div>\n\n    <div class="bubble x9">\n\n      <img src="../../assets/imgs/burbuja1.png" alt="">\n\n    </div>\n\n  </div>\n\n<!--   <ion-fab right top samll>\n\n    <button ion-fab color="light"><ion-icon name="switch"></ion-icon></button>\n\n  </ion-fab>\n\n\n\n  <ion-fab left top samll>\n\n    <button ion-fab color="light"><ion-icon name="exit"></ion-icon></button>\n\n  </ion-fab>\n\n\n\n  <ion-fab right bottom samll>\n\n    <button (click)="refresh()" ion-fab color="light"><ion-icon name="archive"></ion-icon></button>\n\n  </ion-fab> -->\n\n  <ion-fab bottom center samll>\n\n    <button ion-fab color="danger" *ngIf="buttonvisible" (click)="takePhoto()"></button>\n\n  </ion-fab>\n\n<!--   <ion-fab left top samll>\n\n      <button (click)="takeScreenshotGetUri()" *ngIf="!state" ion-fab color="light">URI</button>\n\n    </ion-fab> -->\n\n  <!-- <ion-fab left bottom samll>\n\n    <button (click)="subiryparticipar()" *ngIf="state" ion-fab color="light">SUBIR</button>\n\n  </ion-fab> -->\n\n<!--   <ion-fab right bottom samll>\n\n    <button (click)="descartar()" *ngIf="state" ion-fab color="light">DESCARTAR</button>\n\n  </ion-fab> -->\n\n  <!-- <ion-fab left bottom samll>\n\n    <button (click)="descargar()" *ngIf="state" ion-fab color="light">BAJAR</button>\n\n  </ion-fab> -->\n\n</ion-content>'/*ion-inline-end:"C:\xampp\htdocs\unilever\app\unileverApp\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/home/home.html"*/'<ion-content>\n  <div id="ionball"></div>\n  <canvas #homepagecanvas></canvas>\n  <img class="foto" *ngIf="state" [src]="userScreenshoot"/>\n  <div class="fish" id="fish">\n    <div id="fish2">\n      <img src="../../assets/imgs/pez2.png" />\n    </div>\n    <div id="fish1">\n      <img src="../../assets/imgs/pez1.png" />\n    </div>\n    <div id="fish3">\n      <img src="../../assets/imgs/pez3.png" />\n    </div>\n  </div>\n  <div class="fish2" id="fishRight">\n    <div id="fish5">\n      <img src="../../assets/imgs/pez5.png" />\n    </div>\n    <div id="fish6">\n      <img src="../../assets/imgs/pez6.png" />\n    </div>\n    <div id="fish4">\n      <img src="../../assets/imgs/pez4.png" />\n    </div>\n  </div>\n  <div id="bubbles">\n    <div class="bubble x1">\n      <img src="../../assets/imgs/burbuja1.png" alt="">\n    </div>\n    <div class="bubble x2">\n      <img src="../../assets/imgs/burbuja2.png" alt="">      \n    </div>\n    <div class="bubble x3">\n      <img src="../../assets/imgs/burbuja1.png" alt="">      \n    </div>\n    <div class="bubble x4">\n      <img src="../../assets/imgs/burbuja2.png" alt="">            \n    </div>\n    <div class="bubble x5">\n      <img src="../../assets/imgs/burbuja1.png" alt="">\n    </div>\n    <div class="bubble x6">\n      <img src="../../assets/imgs/burbuja2.png" alt="">            \n    </div>\n    <div class="bubble x7">\n      <img src="../../assets/imgs/burbuja1.png" alt="">\n    </div>\n    <div class="bubble x8">\n      <img src="../../assets/imgs/burbuja2.png" alt="">            \n    </div>\n    <div class="bubble x9">\n      <img src="../../assets/imgs/burbuja1.png" alt="">\n    </div>\n  </div>\n<!--   <ion-fab right top samll>\n    <button ion-fab color="light"><ion-icon name="switch"></ion-icon></button>\n  </ion-fab>\n\n  <ion-fab left top samll>\n    <button ion-fab color="light"><ion-icon name="exit"></ion-icon></button>\n  </ion-fab>\n\n  <ion-fab right bottom samll>\n    <button (click)="refresh()" ion-fab color="light"><ion-icon name="archive"></ion-icon></button>\n  </ion-fab> -->\n  <ion-fab bottom center samll>\n    <button ion-fab color="danger" *ngIf="buttonvisible" (click)="takePhoto()"></button>\n  </ion-fab>\n<!--   <ion-fab left top samll>\n      <button (click)="takeScreenshotGetUri()" *ngIf="!state" ion-fab color="light">URI</button>\n    </ion-fab> -->\n  <!-- <ion-fab left bottom samll>\n    <button (click)="subiryparticipar()" *ngIf="state" ion-fab color="light">SUBIR</button>\n  </ion-fab> -->\n<!--   <ion-fab right bottom samll>\n    <button (click)="descartar()" *ngIf="state" ion-fab color="light">DESCARTAR</button>\n  </ion-fab> -->\n  <!-- <ion-fab left bottom samll>\n    <button (click)="descargar()" *ngIf="state" ion-fab color="light">BAJAR</button>\n  </ion-fab> -->\n</ion-content>'/*ion-inline-end:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera_preview__["a" /* CameraPreview */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera_preview__["a" /* CameraPreview */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__providers_managedata_managedata__["a" /* ManagedataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_managedata_managedata__["a" /* ManagedataProvider */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera_preview__["a" /* CameraPreview */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_managedata_managedata__["a" /* ManagedataProvider */]])
     ], HomePage);
     return HomePage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -639,7 +666,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\xampp\htdocs\unilever\app\unileverApp\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\xampp\htdocs\unilever\app\unileverApp\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);

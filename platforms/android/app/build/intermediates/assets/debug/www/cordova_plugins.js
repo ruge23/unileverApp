@@ -63,6 +63,19 @@ module.exports = [
     "clobbers": [
       "navigator.Base64"
     ]
+  },
+  {
+    "id": "cordova-base64-to-gallery.object.assign-polyfill",
+    "file": "plugins/cordova-base64-to-gallery/www/object.assign-polyfill.js",
+    "pluginId": "cordova-base64-to-gallery"
+  },
+  {
+    "id": "cordova-base64-to-gallery.base64ToGallery",
+    "file": "plugins/cordova-base64-to-gallery/www/base64ToGallery.js",
+    "pluginId": "cordova-base64-to-gallery",
+    "clobbers": [
+      "cordova.base64ToGallery"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -76,7 +89,8 @@ module.exports.metadata =
   "cordova-plugin-ionic-webview": "2.2.0",
   "cordova-plugin-ionic-keyboard": "2.1.3",
   "com.darktalker.cordova.screenshot": "0.1.5",
-  "com-badrit-base64": "0.2.0"
+  "com-badrit-base64": "0.2.0",
+  "cordova-base64-to-gallery": "4.1.3"
 };
 // BOTTOM OF METADATA
 });

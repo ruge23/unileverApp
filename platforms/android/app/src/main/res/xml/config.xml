@@ -25,6 +25,9 @@
     <feature name="Base64">
         <param name="android-package" value="com.badrit.Base64.Base64Plugin" />
     </feature>
+    <feature name="Base64ToGallery">
+        <param name="android-package" value="it.nexxa.base64ToGallery.Base64ToGallery" />
+    </feature>
     <allow-navigation href="http://localhost:8080/*" />
     <feature name="IonicWebView">
         <param name="android-package" value="com.ionicframework.cordova.webview.IonicWebView" />
