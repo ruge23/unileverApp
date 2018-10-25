@@ -1,63 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/rodrigo/tutorialIonic/unilever/unileverApp/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/platforms/android/app/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "-1,2,-1",
-                        "startColumns": "-1,4,-1",
-                        "startOffsets": "-1,55,-1",
-                        "endColumns": "-1,45,-1",
-                        "endOffsets": "-1,96,-1"
-                    },
-                    "to": {
-                        "startLines": "3,4,5",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "101,165,211",
-                        "endColumns": "63,45,58",
-                        "endOffsets": "160,206,265"
-                    }
-                },
-                {
-                    "source": "/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/platforms/android/app/src/main/res/values/camera_ids.xml",
-                    "from": {
-                        "startLines": "-1",
-                        "startColumns": "-1",
-                        "startOffsets": "-1"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "45",
-                        "endOffsets": "96"
-                    }
-                },
-                {
-                    "source": "/home/rodrigo/tutorialIonic/prueba/gitUnilever/unileverApp/platforms/android/app/src/main/res/values/camera_theme.xml",
-                    "from": {
-                        "startLines": "-1",
-                        "startColumns": "-1",
-                        "startOffsets": "-1"
-                    },
-                    "to": {
-                        "startLines": "6",
-                        "startColumns": "4",
-                        "startOffsets": "270",
-                        "endLines": "11",
-                        "endColumns": "10",
-                        "endOffsets": "591"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/rodrigo/tutorialIonic/prueba/unilever/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
-            "map": [
-                {
-                    "source": "/home/rodrigo/tutorialIonic/prueba/unilever/platforms/android/app/src/main/res/values/camera_theme.xml",
+                    "source": "/home/rodrigo/tutorialIonic/unilever/unileverApp/platforms/android/app/src/main/res/values/camera_theme.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "2",
@@ -69,31 +16,14 @@
                     "to": {
                         "startLines": "6",
                         "startColumns": "4",
-                        "startOffsets": "267",
+                        "startOffsets": "270",
                         "endLines": "11",
                         "endColumns": "10",
-                        "endOffsets": "588"
+                        "endOffsets": "591"
                     }
                 },
                 {
-                    "source": "/home/rodrigo/tutorialIonic/prueba/unilever/platforms/android/app/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "4,2,3",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "157,55,98",
-                        "endColumns": "63,42,58",
-                        "endOffsets": "216,93,152"
-                    },
-                    "to": {
-                        "startLines": "3,4,5",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "101,165,208",
-                        "endColumns": "63,42,58",
-                        "endOffsets": "160,203,262"
-                    }
-                },
-                {
-                    "source": "/home/rodrigo/tutorialIonic/prueba/unilever/platforms/android/app/src/main/res/values/camera_ids.xml",
+                    "source": "/home/rodrigo/tutorialIonic/unilever/unileverApp/platforms/android/app/src/main/res/values/camera_ids.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "2",
@@ -107,6 +37,23 @@
                         "startOffsets": "55",
                         "endColumns": "45",
                         "endOffsets": "96"
+                    }
+                },
+                {
+                    "source": "/home/rodrigo/tutorialIonic/unilever/unileverApp/platforms/android/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "160,55,101",
+                        "endColumns": "63,45,58",
+                        "endOffsets": "219,96,155"
+                    },
+                    "to": {
+                        "startLines": "3,4,5",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "101,165,211",
+                        "endColumns": "63,45,58",
+                        "endOffsets": "160,206,265"
                     }
                 }
             ]

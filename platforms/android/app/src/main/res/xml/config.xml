@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Base64">
+        <param name="android-package" value="com.badrit.Base64.Base64Plugin" />
+    </feature>
+    <feature name="Screenshot">
+        <param name="android-package" value="com.darktalker.cordova.screenshot.Screenshot" />
+    </feature>
+    <feature name="Base64ToGallery">
+        <param name="android-package" value="it.nexxa.base64ToGallery.Base64ToGallery" />
+    </feature>
     <feature name="CameraPreview">
         <param name="android-package" value="com.cordovaplugincamerapreview.CameraPreview" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="Whitelist">
-        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="StatusBar">
-        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
         <param name="onload" value="true" />
     </feature>
     <feature name="Device">
@@ -19,21 +20,20 @@
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="Screenshot">
-        <param name="android-package" value="com.darktalker.cordova.screenshot.Screenshot" />
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
     </feature>
-    <feature name="Base64">
-        <param name="android-package" value="com.badrit.Base64.Base64Plugin" />
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
     </feature>
-    <feature name="Base64ToGallery">
-        <param name="android-package" value="it.nexxa.base64ToGallery.Base64ToGallery" />
+    <feature name="Keyboard">
+        <param name="android-package" onload="true" value="io.ionic.keyboard.IonicKeyboard" />
     </feature>
     <allow-navigation href="http://localhost:8080/*" />
     <feature name="IonicWebView">
         <param name="android-package" value="com.ionicframework.cordova.webview.IonicWebView" />
-    </feature>
-    <feature name="Keyboard">
-        <param name="android-package" onload="true" value="io.ionic.keyboard.IonicKeyboard" />
     </feature>
     <name>Unilever</name>
     <description>An awesome Ionic/Cordova app.</description>

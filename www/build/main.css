@@ -33364,8 +33364,9 @@ html, body, ion-app, ion-content, ion-page, .nav-decor {
 
 page-first .scroll-content {
   background-image: url("../../assets/imgs/img/bg-mobile-inicio.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 page-first div.logo {
@@ -33375,7 +33376,7 @@ page-first div.logo {
 }
 
 page-first .botones-index {
-  margin-top: 78%;
+  margin-top: 80% !important;
 }
 
 page-first a {
@@ -33400,7 +33401,6 @@ page-first .botones-index a.btn-como, page-first .botones-index a.btn-empezar {
   text-align: center;
   font-weight: 400;
   white-space: nowrap;
-  vertical-align: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

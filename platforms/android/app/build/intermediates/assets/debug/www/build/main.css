@@ -33364,8 +33364,9 @@ html, body, ion-app, ion-content, ion-page, .nav-decor {
 
 page-first .scroll-content {
   background-image: url("../../assets/imgs/img/bg-mobile-inicio.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 page-first div.logo {
@@ -33375,7 +33376,7 @@ page-first div.logo {
 }
 
 page-first .botones-index {
-  margin-top: 78%;
+  margin-top: 80% !important;
 }
 
 page-first a {
@@ -33400,7 +33401,6 @@ page-first .botones-index a.btn-como, page-first .botones-index a.btn-empezar {
   text-align: center;
   font-weight: 400;
   white-space: nowrap;
-  vertical-align: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -33502,6 +33502,55 @@ page-first .botones-index a.btn-como, page-first .botones-index a.btn-empezar {
 }
 
 .custom-alert-empezar .alert-wrapper div.alert-button-group button.alert-button .button-inner {
+  -webkit-box-pack: center !important;
+  -webkit-justify-content: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+}
+
+.custom-alert-terminos .alert-wrapper {
+  height: 380px !important;
+  margin: 3rem 1rem 0;
+  border-radius: 25px !important;
+  text-align: center !important;
+  border: none;
+  background: #78a8a6 !important;
+  color: #FFF;
+}
+
+.custom-alert-terminos .alert-wrapper .alert-title {
+  text-align: center !important;
+  font-size: 1.3em !important;
+}
+
+.custom-alert-terminos .alert-wrapper .alert-message {
+  height: 400px !important;
+  color: #FFF;
+  font-size: 13px;
+}
+
+.custom-alert-terminos .alert-wrapper div.alert-button-group {
+  border-top: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.custom-alert-terminos .alert-wrapper div.alert-button-group button.alert-button {
+  background: #a9c449;
+  color: #FFF;
+  border-radius: 25px;
+  width: 185px;
+  margin: 15px auto;
+  padding: 10px;
+}
+
+.custom-alert-terminos .alert-wrapper div.alert-button-group button.alert-button .button-inner {
   -webkit-box-pack: center !important;
   -webkit-justify-content: center !important;
   -ms-flex-pack: center !important;
